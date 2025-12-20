@@ -23,6 +23,7 @@ website:
         href: https://www.youtube.com/@rodrigosf672
       - icon: mortarboard
         href: https://scholar.google.com/citations?user=FoA5dgMAAAAJ
+  favicon: favicon.ico
 format:
   html:
     fontsize: 20px
