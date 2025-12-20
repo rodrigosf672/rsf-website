@@ -10,6 +10,6 @@ website.Rproj
 /.quarto/
 
 # posts
-blog/post001/*
+# blog/post001/*
 blog/post002/*
 blog/post003/*

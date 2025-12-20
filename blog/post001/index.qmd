@@ -1,0 +1,23 @@
+---
+title: "First post"
+description: "Welcome to my blog!"
+author: "Rodrigo"
+date: "12/19/2025"
+image: "first-blog-post.jpg"
+categories:
+  - Blog
+  - Quarto
+  - Web Development
+---
+
+![](first-blog-post.jpg)
+
+Hi everyone! This is my first blog post!
+
+This blog will focus mostly on tech, open source, and data science for a better world. I'll use this space to share about different tools that make data science possible, reproducible, and rigorous, especially in the age of AI agentic workflows. Additionally, I'll focus on the amazing Python and Jupyter communities I'm so proud to be part of. Whenever I'm building data science tools, I'm actively thinking about the end user. And this is why I find so valuable to be part of such communities. 
+
+For this blog, I've decided that I'll not use any grammar checkers or AI writing assistants. I want my most authentic, genuine voice to come across here. As a result, there may be typos or my writing may come across as confusing at times. And that's fine... that's how writing goes! I also intend to keep my posts short, with only a few thoughts per post. As someone who can write "walls" of text, that will be a bit challenging for me, but that's part of the exercise I'm proposing for myself herein.
+
+I need to thank two work colleagues from Posit PBC for this blog template: Dr. Charlotte Wickham (Sr. Developer Advocate) and Emil Hvitfeldt (Software Engineer). I watched their four [tutorial videos](https://youtube.com/playlist?list=PL2laqeiu5UqeUn-tQmTbWwfs5fRugp2WW&si=yZtJljjoAieGXQ9y) and forked their [repository](https://github.com/cwickham/quarto-website-video/tree/v0.1). Although I did make some custom modifications to fit my style, the template is awesome and easy to adapt, so I encourage anyone who wants a [Quarto](https://quarto.org/) website to go ahead and fork it as well; it's a great starting point! 
+
+With what said, welcome to my blog!
