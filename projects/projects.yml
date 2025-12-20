@@ -1,0 +1,54 @@
+- title: Python Community Bingo 2025
+  path: https://github.com/rodrigosf672/python-community-bingo-2025
+  description: >
+    A small community-focused PyScript web application designed to encourage reflection on
+    shared experiences in the Python ecosystem and to promote donations to the Python Software
+    Foundation. Users mark off a 5x5 bingo card of community activities and share their results
+    to spread awareness and support.
+  categories: [Python, PyScript, Community, Open Source]
+
+- title: Pokémon Battle Simulator (PyScript)
+  path: https://github.com/rodrigosf672/pyscript-pokemon-app
+  description: >
+    A fully interactive Pokémon battle simulator built entirely in the browser using PyScript.
+    The app supports 1300+ Pokémon, advanced filtering, turn-based combat with type
+    effectiveness, real-time HP tracking, detailed stat visualizations, and sound effects.
+    All data processing runs client-side using Python via WebAssembly.
+  categories: [Python, PyScript, Data Visualization, WebAssembly, Pandas]
+
+- title: Text Mining Orkut’s Community Data with Python
+  path: https://github.com/rodrigosf672/orkut-pydataglobal2025
+  description: >
+    Study of 124,988 recovered Orkut community names reconstructing a small surviving portion
+    of a deleted social platform. The project applies Python-based stylometry, semantic
+    embeddings, and clustering to surface linguistic patterns, cultural themes, and expressive
+    registers from early Brazilian internet culture, demonstrating how computational methods
+    can help recover and interpret fragments of lost digital platforms.
+  categories: [Python, Text Mining, NLP, Computational Linguistics, Data Science]
+
+- title: Honrando las Narrativas de Braceros
+  path: https://github.com/rodrigosf672/braceros-pycon2025
+  description: >
+    Exploration and visualization of oral histories from the Bracero Program using Python.
+    The project includes structured quote extraction from interview transcripts, topic
+    modeling and keyword analysis, an interactive Shiny app to explore quotes by topic and
+    interviewee, and static HTML visualizations highlighting major themes of labor, migration,
+    and resilience.
+  categories: [Python, Text Mining, NLP, Computational Linguistics, Data Visualization]
+
+- title: 3D Cube with Moving Spheres
+  path: https://github.com/rodrigosf672/3D-Cube-and-Spheres
+  description: >
+    A React-based 3D visualization application enabling intuitive exploration of a 3x3x3
+    spatial grid. Users can add, select, move, and label spheres using keyboard controls,
+    supporting spatial reasoning and interactive experimentation. Built with React Three
+    Fiber and Drei.
+  categories: [React, JavaScript, 3D Visualization, UI/UX]
+
+- title: Pennsylvania Cities Trivia Challenge
+  path: https://github.com/rodrigosf672/pa-cities-trivia-react-app
+  description: >
+    An interactive trivia game built with React and TypeScript where users guess Pennsylvania
+    city names based on hints. The app features real-time feedback, sound effects, animations,
+    robust error handling, and a comprehensive test suite using Jest and React Testing Library.
+  categories: [React, TypeScript, UI/UX, Testing]

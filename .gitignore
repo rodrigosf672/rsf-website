@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.Rdata
+.httr-oauth
+.DS_Store
+.quarto
+_site/
+website.Rproj
+
+/.quarto/
+
+# posts
+blog/post001/*
+blog/post002/*
+blog/post003/*

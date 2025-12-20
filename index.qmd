@@ -1,0 +1,32 @@
+---
+title: "Rodrigo<br>Silva Ferreira"
+subtitle: "Chemist | QA Engineer | Speaker<br><i>Data science for a better world</i>"
+# `profile.jpg` photo by Jan Tinneberg on https://unsplash.com
+image: profile.jpg
+about: # https://quarto.org/docs/websites/website-about.html
+  template: trestles
+  image-shape: rectangle
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/rsf309/
+    - icon: github
+      text: Github
+      href: https://www.github.com/rodrigosf672
+    - icon: youtube
+      text: YouTube
+      href: https://www.youtube.com/@rodrigosf672
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=FoA5dgMAAAAJ
+---
+
+Hello! Welcome to my blog! 👋
+
+I’m originally from Salvador, Brazil, but I lived in the Middle East for six years and in the US since 2020.
+
+For the past few years, I've been helping build data analysis and visualization tools. Currently, I'm working on Positron, an open-source data science IDE.
+
+My personal projects revolve around the idea that we can (and should) use data science for social good, aiming to understand and improve the world.
+
+Herein, I share some ideas and projects related to data science, tech, and social good.

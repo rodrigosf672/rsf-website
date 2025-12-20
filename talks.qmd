@@ -1,0 +1,60 @@
+---
+title: Talks
+---
+
+## 2026
+
+TBD
+
+---
+
+## 2025
+
+**PyData Boston** · Boston, MA · *December 2025*  
+*When Rivers Speak: Analyzing Massive Water Quality Datasets using USGS API and Remote SSH in Positron.*
+
+**PyData Global** · Online · *December 2025*  
+*Text Mining Orkut’s Community Data with Python: Cultural Memory, Platform Neglect, and Digital Amnesia.*
+
+**FortranCon** · Online · *November 2025*  
+*Interfacing Fortran and Python for ODE Modeling: A Performance Study on Ethylene Dichloride Cracking.*
+
+**Pacific Northwest Software Quality Conference** · Portland, OR · *October 2025*  
+*Web for All: Enhancing Quality Intelligence with Automated Accessibility Testing using Playwright and axe-core.*
+
+**Cloudflare Connect** · Las Vegas, NV · *October 2025*  
+*Human enough to pass? Probing computer vision automation against Turnstile.*
+
+**PyTorch Conference** · San Francisco, CA · *October 2025*  
+*PyTorch Analysis of DEA Drug Seizures: Reexamining the Border Dilution Effect from 2010 to 2022.*  
+Poster presentation.
+
+**Web Data Extraction Summit** · Austin, TX · *September 2025*  
+*Web Scraping as Social Practice: Balancing Ethics and Efficiency in a Data-Hungry World.*
+
+**PyOhio** · Cleveland, OH · *July 2025*  
+*From Fortran to Python: A Conversation Across Generations of Scientific Computing.*  
+Speaker and Session Chair.
+
+**PyCon Colombia** · Medellín, Colombia · *July 2025*  
+*A Deep Dive into Web Performance Testing: Playwright vs. Locust.*  
+Workshop instructor.
+
+**PyCon US** · Pittsburgh, PA · *May 2025*  
+*Honrando las Narrativas de Braceros: Un Enfoque Pythonico para Minería de Textos de Historias de Trabajo Arduo, Migración y Resiliencia.*
+
+**Pennsylvania Pain and Addiction Summit** · Wilkes University · *April 2025*  
+*Electrochemical Detection as a Harm Reduction Strategy for Opioid Overdose Prevention.*
+
+**PyTexas** · Austin, TX · *April 2025*  
+*Signal Processing in Electrochemistry with Python: Applications to the US Opioids Crisis.*
+
+---
+
+## 2024
+
+**PyOhio** · Cleveland, OH · *July 2024*  
+*Signal Processing in Electrochemistry with Python: Applications to the US Opioids Crisis.*
+
+**PyCon US** · Pittsburgh, PA · *May 2024*  
+Humble Data Workshop Mentor and Session Chair (two sessions).
