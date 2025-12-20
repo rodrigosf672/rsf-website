@@ -16,13 +16,13 @@ website:
       - href: blog/index.qmd
     tools:
       - icon: linkedin
-        href: linkedin.com/in/rsf309
+        href: https://www.linkedin.com/in/rsf309/
       - icon: github
-        href: github.com/rodrigosf672
+        href: https://www.github.com/rodrigosf672
       - icon: youtube
-        href: youtube.com/@rodrigosf672
+        href: https://www.youtube.com/@rodrigosf672
       - icon: mortarboard
-        href: scholar.google.com/citations?user=FoA5dgMAAAAJ
+        href: https://scholar.google.com/citations?user=FoA5dgMAAAAJ
 format:
   html:
     fontsize: 20px
