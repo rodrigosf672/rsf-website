@@ -51,7 +51,7 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install -g playwright && npx playwright install --with-deps chromium
+        run: npm install && npx playwright install --with-deps chromium
       - name: Run Site Critical Tests
         run: npx playwright test tests/site-critical.spec.ts
         env:
