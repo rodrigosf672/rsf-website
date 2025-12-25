@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Home"
-  site-url: https://rodrigosf.com
+  site-url: https://rodrigosf.com/
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   page-footer:
     center: |

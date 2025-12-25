@@ -9,7 +9,21 @@ website.Rproj
 
 /.quarto/
 
+# Node.js
+node_modules/
+
+# Playwright
+test-results/
+playwright-report/
+
 # posts
 # blog/post001/*
 blog/post002/*
 blog/post003/*
+blog/post004/*
+blog/post005/*
+blog/post006/*
+blog/post007/*
+blog/post008/*
+blog/post009/*
+blog/post010/*
