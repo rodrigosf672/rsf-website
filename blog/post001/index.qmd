@@ -2,7 +2,7 @@
 title: "First post"
 description: "Welcome to my blog!"
 author: "Rodrigo"
-date: "12/19/2025"
+date: "01/05/2025"
 image: "first-blog-post.jpg"
 categories:
   - Blog
