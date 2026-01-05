@@ -19,7 +19,7 @@ TBD
 **FortranCon** · Online · *November 2025*  
 *Interfacing Fortran and Python for ODE Modeling: A Performance Study on Ethylene Dichloride Cracking.*
 
-**Pacific Northwest Software Quality Conference** · Portland, OR · *October 2025*  
+**Pacific Northwest Software Quality Conference** · Online · *October 2025*  
 *Web for All: Enhancing Quality Intelligence with Automated Accessibility Testing using Playwright and axe-core.*
 
 **Cloudflare Connect** · Las Vegas, NV · *October 2025*  
