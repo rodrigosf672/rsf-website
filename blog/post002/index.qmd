@@ -16,7 +16,7 @@ February 2 has always felt like a date where my city of origin, Salvador, become
 
 It is widely recognized in Brazil as the day of the Queen of the Seas, [Yemanjá](https://en.wikipedia.org/wiki/Yem%E1%BB%8Dja), an important *orixá* in Afro-Brazilian religions like Candomblé and Umbanda. Along the Bahian coast, the celebrations are not only spiritual, but deeply social. They are moments when Afro-Brazilian history, presence, and continuity take visible form through ritual, music, offerings, and collective gathering.
 
-It belongs to a similar cultural landscape as the Lavagem do Bonfim, another tradition I experienced firsthand growing up. What fascinates me about both is how they operate as living infrastructures. They organize memory, belonging, and public life through practice, repetition, and community participation across generations, often in the face of marginalization and attempts at erasure.
+It belongs to a similar cultural landscape as the Lavagem do Bonfim, another tradition I experienced this year (maybe there will be another blog post about that in the future). What fascinates me about both is how they operate as living infrastructures. They organize memory, belonging, and public life through practice, repetition, and community participation across generations, often in the face of marginalization and attempts at erasure.
 
 I find myself thinking about that today because February 2 also happens to be the day of the [alpha release](https://github.com/posit-dev/positron/releases/tag/2026.02.0-139) of the [Positron Notebook Editor](https://positron.posit.co/positron-notebook-editor.html)!
 
