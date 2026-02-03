@@ -18,7 +18,7 @@ playwright-report/
 
 # posts
 # blog/post001/*
-blog/post002/*
+# blog/post002/*
 blog/post003/*
 blog/post004/*
 blog/post005/*

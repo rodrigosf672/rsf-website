@@ -1,0 +1,29 @@
+---
+title: "February 2"
+description: "Day of Yemanjá and Positron Notebook Editor"
+author: "Rodrigo"
+date: "02/02/2026"
+image: "collage-feb2.png"
+categories:
+  - Culture
+  - Tech
+  - Notebooks
+---
+
+![](collage-feb2.png)
+
+February 2 has always felt like a date where my city of origin, Salvador, becomes especially itself.
+
+It is widely recognized in Brazil as the day of the Queen of the Seas, [Yemanjá](https://en.wikipedia.org/wiki/Yem%E1%BB%8Dja), an important *orixá* in Afro-Brazilian religions like Candomblé and Umbanda. Along the Bahian coast, the celebrations are not only spiritual, but deeply social. They are moments when Afro-Brazilian history, presence, and continuity take visible form through ritual, music, offerings, and collective gathering.
+
+It belongs to a similar cultural landscape as the Lavagem do Bonfim, another tradition I experienced firsthand growing up. What fascinates me about both is how they operate as living infrastructures. They organize memory, belonging, and public life through practice, repetition, and community participation across generations, often in the face of marginalization and attempts at erasure.
+
+I find myself thinking about that today because February 2 also happens to be the day of the [alpha release](https://github.com/posit-dev/positron/releases/tag/2026.02.0-139) of the [Positron Notebook Editor](https://positron.posit.co/positron-notebook-editor.html)!
+
+That coincidence makes me reflect on how technical ecosystems are also sustained culturally. Notebooks are *not* just interfaces for running code. Thanks to [Project Jupyter](https://jupyter.org/), they became one of the most important knowledge infrastructures of modern computing, shaping how researchers, educators, and data scientists think, narrate analysis, share results, and build reproducible work together.
+
+So I’m genuinely excited that Positron is investing in first-class notebook support and contributing to the broader notebook ecosystem that so many communities depend on every day. In very different domains, both traditions and tools endure because people collectively maintain them through shared practice.
+
+So today, as I celebrate this release and the work of many behind it, I’m also celebrating what February 2 means back in Salvador.
+
+*Odoyá, Yemanjá! May her protect and guide us. Happy February 2nd.* 🌊
