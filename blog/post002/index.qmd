@@ -1,6 +1,6 @@
 ---
 title: "February 2"
-description: "Day of Yemanjá and Positron Notebook Editor"
+description: "Day of Yemanjá and Alpha Release of Positron Notebook Editor"
 author: "Rodrigo"
 date: "02/02/2026"
 image: "collage-feb2.png"
