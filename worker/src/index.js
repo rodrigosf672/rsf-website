@@ -125,7 +125,7 @@ export default {
             const data = line.slice(6).trim();
             if (data === "[DONE]") continue;
             try {
-              const delta = JSON.parse(data).response || "";
+              const delta = String(JSON.parse(data).response ?? "");
               if (delta) {
                 full += delta;
                 await writer.write(enc.encode(sse({ type: "delta", text: delta })));

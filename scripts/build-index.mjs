@@ -76,15 +76,23 @@ function indexHome() {
 function indexTalks() {
   const html = read("site/talks.html");
   let year = "";
+  const overview = [];
   for (const m of html.matchAll(/<h2 class="year-heading"[^>]*>(\d{4})<\/h2>|<article class="talk">(.*?)<\/article>/gs)) {
     if (m[1]) { year = m[1]; continue; }
     const b = m[2];
     const when = strip((b.match(/<div class="talk-when">(.*?)<\/div>/s) || [, ""])[1]);
     const title = strip((b.match(/<h3 class="talk-title">(.*?)<\/h3>/s) || [, ""])[1]);
     const meta = strip((b.match(/<p class="talk-meta">(.*?)<\/p>/s) || [, ""])[1]);
-    add("talk", `Talk: ${title.replace(/\s*(upcoming|accepted|poster|workshop|mentor|speaker|charla)[^]*$/i, "").trim()}`,
+    const cleanTitle = title.replace(/\s*(upcoming|accepted|poster|workshop|mentor|speaker|charla)[^]*$/i, "").trim();
+    add("talk", `Talk: ${cleanTitle}`,
       `${SITE}/talks.html`, `Conference talk (${when}): "${title}" at ${meta}.`);
+    overview.push(`"${cleanTitle}" (${meta.split("·")[0].trim()}, ${when})`);
   }
+  // Rollup chunk so aggregate questions ("what talks has he given?",
+  // "recent talks") retrieve the whole list, not one random talk.
+  add("talk", "Talks overview — all of Rodrigo's conference appearances",
+    `${SITE}/talks.html`,
+    `Rodrigo has 20+ conference appearances. Complete list of his talks, workshops, and posters, most recent first: ${overview.join("; ")}.`);
   add("talk", "Talk recordings playlist", "https://www.youtube.com/playlist?list=PL2laqeiu5UqdUaDCc00i2i7YQxI_KbsBB",
     "Selected recordings of Rodrigo's conference talks are collected in a YouTube playlist, embedded on the talks page of his website.");
 }
@@ -99,6 +107,14 @@ function indexPublications() {
     const venue = strip((b.match(/<p class="venue-line">(.*?)<\/p>/s) || [, ""])[1]);
     add("publication", `Publication: ${title}`, url, `"${title}" by ${authors}. Published in ${venue}.`);
   }
+  const pubOverview = [...html.matchAll(/<article class="pub">(.*?)<\/article>/gs)].map((m) => {
+    const t = strip((m[1].match(/<h3><a href="[^"]*">(.*?)<\/a><\/h3>/s) || [, ""])[1]);
+    const v = strip((m[1].match(/<p class="venue-line">(.*?)<\/p>/s) || [, ""])[1]);
+    return `"${t.slice(0, 90)}" (${v.split("·")[0].trim()})`;
+  });
+  add("publication", "Publications overview — all of Rodrigo's research papers",
+    `${SITE}/publications.html`,
+    `Complete list of Rodrigo's research publications and papers: ${pubOverview.join("; ")}.`);
   const stats = html.match(/<dl class="stats"(.*?)<\/dl>/s);
   if (stats) add("publication", "Publication metrics", `${SITE}/publications.html`,
     "Rodrigo has 8 research publications with 307+ citations and an h-index of 3, including three papers in Nature Communications and one in Angewandte Chemie International Edition. Full record on Google Scholar: https://scholar.google.com/citations?user=FoA5dgMAAAAJ");
@@ -115,6 +131,14 @@ function indexProjects() {
     const featured = m[0].includes("card-featured") ? "Featured project. " : "";
     add("project", `Project: ${title}`, url, `${featured}${title}: ${desc} Topics: ${tags}.`);
   }
+}
+
+function indexProjectsOverview() {
+  const html = read("site/projects.html");
+  const names = [...html.matchAll(/<h3><a href="[^"]*">(.*?)<\/a><\/h3>/gs)].map((m) => strip(m[1]));
+  add("project", "Projects overview — all of Rodrigo's open source projects",
+    `${SITE}/projects.html`,
+    `Complete list of Rodrigo's open source projects, featured first: ${names.join("; ")}. Featured projects highlight developer tooling and the Python data ecosystem.`);
 }
 
 function indexFaq() {
@@ -171,6 +195,7 @@ indexHome();
 indexTalks();
 indexPublications();
 indexProjects();
+indexProjectsOverview();
 indexFaq();
 await indexGitHub();
 
