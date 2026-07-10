@@ -151,7 +151,12 @@ test.describe('Portfolio Assistant UI', () => {
     });
 
     test('unconfigured API shows a graceful notice instead of failing', async ({ page }) => {
-        await page.goto('/'); // no meta override, no route -> content=""
+        await page.addInitScript(() => {
+            addEventListener('DOMContentLoaded', () => {
+                document.querySelector('meta[name="assistant-api"]')!.setAttribute('content', '');
+            });
+        });
+        await page.goto('/');
         await openChat(page);
         await page.locator('#chat-input').fill('hello');
         await page.locator('.chat-send').click();
