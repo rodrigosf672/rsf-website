@@ -157,13 +157,13 @@
   const getApiBase = function () { return (document.querySelector('meta[name="assistant-api"]') || {}).content || ""; };
 
   const SUGGESTIONS = [
-    "What is Notebook Observatory?",
-    "Tell me about Rodrigo's publications.",
-    "Which GitHub projects should I look at first?",
-    "Why is Rodrigo interested in AI-native development?",
-    "What conference talks has Rodrigo given?",
-    "Tell me about Rodrigo's work with Project Jupyter.",
-    "Explain Rodrigo's transition from chemistry into developer tooling.",
+    "Who is Rodrigo and what does he do?",
+    "What is Rodrigo working on right now?",
+    "Which projects should I look at first?",
+    "What are his most cited publications?",
+    "What talks has he given recently?",
+    "How did a chemist end up building developer tools?",
+    "How can I collaborate with or hire Rodrigo?",
   ];
   const history = [];       // {role, content} turns sent to the API
   const asked = [];         // for arrow-key recall

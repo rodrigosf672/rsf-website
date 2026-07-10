@@ -37,6 +37,19 @@ bench work itself. That path led through software quality engineering at
 Minitab into developer tooling and developer experience work at Posit on
 the Positron IDE.
 
+## Why Rodrigo focuses on AI-native development
+
+Rodrigo believes the hardest problem in AI is no longer access to models but
+trust: helping developers build, adopt, and verify AI-assisted workflows that
+are reproducible and production-ready. His quality-engineering background
+makes him focus on the verification side of AI-native development — he built
+AI-assisted developer tooling at Posit, created Python Environment Doctor (a
+Claude Code skill), gave talks like "In Defense of Thoughtful Testing:
+Rethinking Quality in the Age of AI-Generated Code" and "Trust, but Verify:
+Interactive EDA in the Age of AI Agents", and the assistant answering this
+question is itself an AI-native, retrieval-grounded feature he built for his
+website.
+
 ## Rodrigo's professional philosophy
 
 Rodrigo believes the best products earn trust by reducing complexity rather
