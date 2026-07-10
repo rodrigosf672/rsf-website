@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generative AI in Action Review: Thinking in AI Systems — Rodrigo Silva Ferreira</title>
+  <meta name="description" content="A developer-tooling perspective on Amit Bahree's Generative AI in Action: why the book's real lesson is architecture, evaluation, and trust, not prompts.">
+  <link rel="canonical" href="https://rodrigosf.com/blog/generative-ai-in-action-review.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Generative AI in Action Review: Thinking in AI Systems — Rodrigo Silva Ferreira">
+  <meta property="og:description" content="A developer-tooling perspective on Amit Bahree's Generative AI in Action: why the book's real lesson is architecture, evaluation, and trust, not prompts.">
+  <meta property="og:url" content="https://rodrigosf.com/blog/generative-ai-in-action-review.html">
+  <link rel="icon" href="/favicon.ico">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=5">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="/"><span class="prompt-sign">rodrigo@rsf</span>:~$<span class="cursor" aria-hidden="true"></span></a>
+      <div class="nav-links">
+        <a href="/talks.html">talks</a>
+        <a href="/projects.html">projects</a>
+        <a href="/publications.html">publications</a>
+        <a href="/blog/" aria-current="page">blog</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">--light</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="section post">
+      <div class="container">
+        <span class="kicker">blog</span>
+        <h1>The Raffle Ticket That Rewired How I Think About AI Products</h1>
+        <p class="post-meta">July 2026 · 8 min read · + interactive notebook · a review of <em>Generative AI in Action</em> by Amit Bahree (Manning)</p>
+        <blockquote class="epigraph">I expected a book about how language models work. I finished it thinking about orchestration layers, evaluation budgets, and why grounding is a trust decision, not a technical one.</blockquote>
+        <div class="post-body">
+        <h2>A raffle at PyData Boston</h2>
+        <p>Last December I was at PyData Boston, doing the thing you do between talks: wandering the sponsor tables, half looking for stickers, half looking for conversations. The Anaconda booth had both. Dawn Wages, Daina Bouquin, and Jessica Stefanowicz were running it, and it was one of those booths where you stop for thirty seconds and stay for twenty minutes. We talked about Python packaging, community, and the strange moment the data ecosystem is living through. I dropped my name in their raffle mostly as a formality.</p>
+        <p>I won a copy of <em>Generative AI in Action</em> by Amit Bahree.</p>
+        <p>I want to be honest about my expectations. Conference raffle books have a certain reputation. They go on the shelf, they collect intentions, they wait. This one did not wait long, and it turned out to be one of the most useful technical books I have read in the past few years. Not because it taught me an API, but because it quietly replaced the mental model I was using for AI products.</p>
+        <p>This is also a small argument for going to conferences at all. The talks are recorded. The conversations are not. A raffle ticket handed over by a booth team that clearly cares about its community turned into months of thinking. That exchange rate is hard to beat.</p>
+        <h2>This was not really a book about prompts</h2>
+        <p>The book covers prompts, of course. There is a full chapter on prompt engineering, with system messages, zero-shot and few-shot patterns, chain of thought, and advice about clear syntax. It is good material, and the interactive widgets below borrow from it.</p>
+        <p>But treating this as a prompt book would be like treating a civil engineering textbook as a book about bricks. The prompt is the visible artifact. The book is about everything around it: the model choices, the retrieval pipelines, the orchestration layer that decides what actually reaches the model, the filters on the way out, the evaluation harness that tells you whether any of it works, and the operational machinery that keeps it working at scale.</p>
+        <p>Bahree structures the book in three movements. Foundations first: what these models are, how tokens and embeddings and context windows behave, and what the configuration knobs actually do. Then techniques: prompt engineering, retrieval-augmented generation, chatting with your own data, fine-tuning. Then the part that most books skip and most teams need: application architecture, production deployment, evaluations, and responsible AI.</p>
+        <p>That third movement is where the book earns its title. "In action" turns out to mean "in production, with users, under constraints."</p>
+        <h2>Thinking like a product builder</h2>
+        <p>I work on developer tools. My daily questions are about workflows, adoption, and trust: will a data scientist trust this output, will this fit how people already work, what happens when it fails. Reading this book, I kept noticing that the same questions govern AI products, just wearing different clothes.</p>
+        <p>A few shifts stuck with me.</p>
+        <p><strong>Model configuration is a product surface, not a tuning detail.</strong> Temperature, top_p, penalties, and max tokens read like implementation trivia until you realize they encode a product decision: how much unpredictability are you willing to ship? The book is refreshingly practical here, down to advice like adjusting temperature or top_p but not both. A support bot and a brainstorming tool might use the same model and be entirely different products because of these numbers.</p>
+        <p><strong>Retrieval is a trust architecture.</strong> The RAG chapters frame retrieval not as a clever trick but as the mechanism that lets a general model answer from your data, with provenance. Once you see grounding as the thing that turns "plausible" into "verifiable," a lot of product decisions clarify. Chunking strategy, embedding choice, and vector search stop being infrastructure minutiae and become the difference between an answer a user can check and an answer a user has to believe.</p>
+        <p><strong>Adaptation has a cost gradient.</strong> The book is careful about fine-tuning: when it helps, what it costs, and how often prompting or retrieval solves the problem more cheaply. That ordering, prompt first, ground next, fine-tune last, is really a resource allocation argument, the kind product managers make about any feature.</p>
+        <p><strong>Operations are where AI products live or die.</strong> The production chapter talks about latency budgets, time to first token, quotas, rate limits, and the pay-as-you-go economics of tokens. None of this is glamorous. All of it decides whether users experience your product as instant and reliable or as a spinner with occasional poetry.</p>
+        <p><strong>Evaluation is testing with a different accent.</strong> BLEU, ROUGE, and BERTScore on one side; LLM-based approaches like G-Eval and broad benchmarks like HELM on the other. What struck me is how familiar the underlying discipline is. You define what good means, you measure it continuously, you distrust single numbers. I have spent years arguing for thoughtful testing in software. Evaluations are the same argument relocated.</p>
+        <h2>The chapter that changed my perspective</h2>
+        <p>Chapter 10, on application architecture, is the one I keep returning to.</p>
+        <p>It opens with two framings: Karpathy's "Software 2.0," where learned behavior replaces handwritten logic, and the copilot pattern, where AI augments a human who stays in charge. Then it does something genuinely useful: it lays out a GenAI application stack, layer by layer, the way we once talked about the LAMP stack. Infrastructure at the bottom, foundation models above it, then an orchestration layer that handles grounding, response filtering, and plugin execution, and finally the application the user actually touches.</p>
+        <p>Why did this change my perspective? Because it made AI legible as software infrastructure. Before reading it, I mentally filed most AI products as "a model with a UI." Afterward, I could not unsee the middle: the orchestration layer is where the interesting engineering and most of the product risk lives. It decides what context the model sees, what tools it may call, and what is allowed out. It is also, not coincidentally, where trust is implemented.</p>
+        <p>The evaluations chapter is a close second, for a personal reason. I gave a talk this year about testing in the age of AI-generated code, and the book's treatment of evals reads like the missing appendix to that argument. If generation is cheap, judgment becomes the scarce resource. Evals are how you industrialize judgment.</p>
+        <h2>Things I immediately wanted to experiment with</h2>
+        <p>I think best by building, and I write and prototype in marimo notebooks these days, so the book turned into a to-do list.</p>
+        <p>The first thing I built is the set of interactive explainers embedded in this post: a model configuration playground that shows how temperature and top_p reshape a token distribution, a prompt pattern explorer, a clickable version of the application stack, a fine-tuning decision helper, and a responsible AI checklist. None of them call a model. That is deliberate. The concepts are about distributions, structures, and tradeoffs, and you can teach those with careful simulation, reproducibly, in the browser.</p>
+        <p>There is something fitting about using a reactive notebook for this. The book's deepest theme is that AI systems are systems, with dependencies and dataflow and failure modes. A notebook where every cell declares its dependencies and updates deterministically is a small, honest model of the discipline the book asks for at production scale. Reproducibility is not a garnish here. It is the point.</p>
+        <p>It also left me with product questions I am still chewing on for the notebook and IDE world I work in. What does grounding look like inside an exploratory data analysis session? Where does an evaluation harness live when the "application" is a scientist's notebook? Which layer of the stack should a tool like a data science IDE own, and which should it merely observe?</p>
+        <h2>Why I would recommend it</h2>
+        <p>Not because it will teach you the latest API. Books cannot win that race, and this one knows it. Model names age; the chapters on architecture, evaluation, deployment, and risk do not.</p>
+        <p>I would recommend it because it helps people think clearly about AI systems, and clear thinking is the actual bottleneck right now. Developers will get a map of the whole stack instead of a pile of snippets. Product managers and TPMMs will get the vocabulary to interrogate architecture decisions instead of accepting them. Developer advocates will find honest framings that do not oversell. Data scientists will find the bridge between experimentation and production that their organizations keep asking them to cross.</p>
+        <p>The book treats generative AI as infrastructure with tradeoffs rather than magic with a rate card, and that stance is worth the cover price on its own. Or, in my case, worth one extremely lucky raffle ticket.</p>
+        <p>Thank you, Amit Bahree, for writing a book that respects both the technology and the reader. And thank you Dawn Wages, Daina Bouquin, and Jessica Stefanowicz, and the Anaconda crew at PyData Boston, for the conversation, the community, and the ticket. Conferences are made of talks, but they are remembered for exchanges like that one.</p>
+        <h2>What book should I review next?</h2>
+        <p>There is a small poll at the end of the interactive notebook. Current candidates: <em>AI Engineering</em>, <em>Designing Machine Learning Systems</em>, <em>Build</em>, <em>Software Engineering at Google</em>, and <em>Building LLM Applications</em>. Vote, and if you have a dark horse, my inbox is open.</p>
+        </div>
+
+        <section class="notebook-embed" aria-labelledby="nb-h">
+          <h2 id="nb-h">The interactive companion</h2>
+          <p class="prose" style="margin-bottom:1rem">Every widget from the post, running as a live <a href="https://marimo.io">marimo</a> notebook compiled to WebAssembly. Python runs in your browser; nothing is sent anywhere. It may take a few seconds to boot. <a href="/blog/genai-in-action-notebook/">Open it full screen →</a></p>
+          <div class="nb-frame">
+            <iframe src="/blog/genai-in-action-notebook/" title="Interactive marimo notebook: Generative AI in Action, interactively" loading="lazy"></iframe>
+          </div>
+        </section>
+
+        <p class="post-back"><a href="/blog/">← All posts</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="echo"><span class="prompt-sign">$</span> echo <span class="str">"Ideas worth building on."</span></p>
+      <p>© 2026 Rodrigo Silva Ferreira · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · handcrafted HTML &amp; CSS, no framework</p>
+      <div class="foot-links">
+        <a href="https://github.com/rodrigosf672">github</a>
+        <a href="https://www.linkedin.com/in/rsf309/">linkedin</a>
+        <a href="https://www.youtube.com/@rodrigosf672">youtube</a>
+        <a href="https://scholar.google.com/citations?user=FoA5dgMAAAAJ">scholar</a>
+        <a href="mailto:rodrigosf672@gmail.com">email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=5"></script>
+</body>
+</html>

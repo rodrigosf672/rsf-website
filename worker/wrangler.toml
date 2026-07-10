@@ -1,0 +1,11 @@
+name = "ask-rodrigo"
+main = "src/index.js"
+compatibility_date = "2026-06-01"
+
+# Workers AI binding — provides embeddings (bge-base-en-v1.5) and
+# generation (llama-3.3-70b-instruct-fp8-fast) with no API keys.
+[ai]
+binding = "AI"
+
+[observability]
+enabled = true

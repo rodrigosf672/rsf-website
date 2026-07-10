@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — Rodrigo Silva Ferreira</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.ico">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=5">
+</head>
+<body>
+  <main id="main" class="section">
+    <div class="container" style="max-width:44rem">
+      <div class="terminal">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          <span class="term-title">rodrigo@rsf: ~</span>
+        </div>
+        <pre class="terminal-body"><span class="prompt">$</span> <span class="cmd">cat requested-page.html</span>
+<span class="out">cat: requested-page.html: No such file or directory (404)</span>
+
+<span class="prompt">$</span> <span class="cmd">cd ~</span>  <span class="out"># <a href="/">back to the homepage</a></span>
+<span class="prompt">$</span> <span class="cursor" aria-hidden="true"></span></pre>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
