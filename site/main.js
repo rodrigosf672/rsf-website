@@ -142,11 +142,19 @@
   lb.addEventListener("click", function (e) { if (e.target === lb) closeLb(); });
 })();
 
-// Portfolio Assistant: `ask-rodrigo` command in the hero terminal.
+// Site assistants: `ask-rodrigo` on the home terminal, `ask-blog` on the blog terminal.
+// The chat panel's data-scope attribute selects persona, command, and suggestions.
 (function () {
   const termInput = document.getElementById("term-input");
   const chat = document.getElementById("chat");
   if (!termInput || !chat) return;
+
+  const scope = chat.getAttribute("data-scope") || "site";
+  const CMD = scope === "blog" ? "ask-blog" : "ask-rodrigo";
+  const BOT = scope === "blog" ? "blog-bot: " : "rsf-bot: ";
+  const WELCOME = scope === "blog"
+    ? "Ask me about the blog posts: what they argue, what they review, and how the interactive notebooks work. I only answer from the published posts."
+    : "Ask me about my work, projects, talks, publications, GitHub repositories, or professional background.";
 
   const termBody = termInput.closest(".terminal-body");
   const log = chat.querySelector(".chat-log");
@@ -156,15 +164,24 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const getApiBase = function () { return (document.querySelector('meta[name="assistant-api"]') || {}).content || ""; };
 
-  const SUGGESTIONS = [
-    "Who is Rodrigo and what does he do?",
-    "What is Rodrigo working on right now?",
-    "Which projects should I look at first?",
-    "What are his most cited publications?",
-    "What talks has he given recently?",
-    "How did a chemist end up building developer tools?",
-    "How can I collaborate with or hire Rodrigo?",
-  ];
+  const SUGGESTIONS = scope === "blog"
+    ? [
+        "What is the latest post about?",
+        "Why does Rodrigo recommend Generative AI in Action?",
+        "What does the review say about the GenAI application stack?",
+        "What can I do in the interactive notebook?",
+        "What does the post say about evals and testing?",
+        "How did Rodrigo end up with this book?",
+      ]
+    : [
+        "Who is Rodrigo and what does he do?",
+        "What is Rodrigo working on right now?",
+        "Which projects should I look at first?",
+        "What are his most cited publications?",
+        "What talks has he given recently?",
+        "How did a chemist end up building developer tools?",
+        "How can I collaborate with or hire Rodrigo?",
+      ];
   const history = [];       // {role, content} turns sent to the API
   const asked = [];         // for arrow-key recall
   let askedPos = -1;
@@ -184,9 +201,9 @@
     const cmd = termInput.value.trim();
     termInput.value = "";
     if (!cmd) return;
-    if (cmd === "ask-rodrigo" || cmd === "ask") { openChat(); return; }
-    if (cmd === "help") { echo("available commands: ask-rodrigo, help"); return; }
-    echo("command not found: " + cmd + " — try ask-rodrigo", true);
+    if (cmd === CMD || cmd === "ask") { openChat(); return; }
+    if (cmd === "help") { echo("available commands: " + CMD + ", help"); return; }
+    echo("command not found: " + cmd + " — try " + CMD, true);
   });
 
   /* ----- chat panel ----- */
@@ -204,7 +221,7 @@
 
   function renderWelcome() {
     const m = msgEl("assistant");
-    m.text.textContent = "Ask me about my work, projects, talks, publications, GitHub repositories, or professional background.";
+    m.text.textContent = WELCOME;
     m.text.classList.add("chat-welcome");
     const sug = document.createElement("div");
     sug.className = "chat-suggest";
@@ -224,7 +241,7 @@
     wrap.className = "chat-msg " + role;
     const who = document.createElement("span");
     who.className = "who";
-    who.textContent = role === "user" ? "> you: " : "rsf-bot: ";
+    who.textContent = role === "user" ? "> you: " : BOT;
     const text = document.createElement("span");
     text.className = "msg-text";
     wrap.appendChild(who);
@@ -320,7 +337,7 @@
       const res = await fetch(apiBase.replace(/\/$/, "") + "/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: q, history: history.slice(-8) }),
+        body: JSON.stringify({ message: q, history: history.slice(-8), scope: scope }),
       });
       if (!res.ok) {
         const err = await res.json().catch(function () { return {}; });

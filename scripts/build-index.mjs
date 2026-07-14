@@ -17,7 +17,7 @@
  * Optional: GITHUB_TOKEN to raise the GitHub API rate limit.
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -141,6 +141,42 @@ function indexProjectsOverview() {
     `Complete list of Rodrigo's open source projects, featured first: ${names.join("; ")}. Featured projects highlight developer tooling and the Python data ecosystem.`);
 }
 
+function indexBlog() {
+  const files = readdirSync(join(ROOT, "site/blog")).filter(
+    (f) => f.endsWith(".html") && f !== "index.html",
+  );
+  const titles = [];
+  for (const f of files) {
+    const html = read(`site/blog/${f}`);
+    if (!html.includes('class="post-body"')) continue;
+    const url = `${SITE}/blog/${f}`;
+    const title = strip((html.match(/<h1>(.*?)<\/h1>/s) || [, f])[1]);
+    const meta = strip((html.match(/<p class="post-meta">(.*?)<\/p>/s) || [, ""])[1]);
+    const epigraph = strip((html.match(/<blockquote class="epigraph">(.*?)<\/blockquote>/s) || [, ""])[1]);
+    titles.push(`"${title}"`);
+    add("blog", `Blog post: ${title}`, url, `Blog post "${title}". ${meta}. ${epigraph}`);
+
+    const body = (html.match(/<div class="post-body">([\s\S]*?)<\/div>/) || [, ""])[1];
+    for (const sec of body.split(/<h2>/).slice(1)) {
+      const [headRaw, ...restRaw] = sec.split("</h2>");
+      const heading = strip(headRaw);
+      const text = strip(restRaw.join("</h2>"));
+      // long sections become multiple chunks so retrieval stays precise
+      for (let i = 0, part = 1; i < text.length; i += 1800, part++) {
+        add("blog", `Blog: ${title} — ${heading}${text.length > 1800 ? ` (${part})` : ""}`,
+          url, text.slice(i, i + 1800));
+      }
+    }
+    const nb = html.match(/<section class="notebook-embed"[\s\S]*?<p class="prose"[^>]*>([\s\S]*?)<\/p>[\s\S]*?<iframe src="([^"]+)"/);
+    if (nb) add("blog", `Blog: ${title} — interactive notebook`, `${SITE}${nb[2]}`,
+      `The post "${title}" embeds an interactive marimo notebook. ${strip(nb[1])}`);
+  }
+  if (titles.length) {
+    add("blog", "Blog overview — all posts on Rodrigo's blog", `${SITE}/blog/`,
+      `Posts published on Rodrigo's blog, most recent first: ${titles.join("; ")}. Posts ship with interactive marimo notebooks that run entirely in the browser.`);
+  }
+}
+
 function indexFaq() {
   const md = read("content/faq.md");
   for (const sec of md.split(/^## /m).slice(1)) {
@@ -196,6 +232,7 @@ indexTalks();
 indexPublications();
 indexProjects();
 indexProjectsOverview();
+indexBlog();
 indexFaq();
 await indexGitHub();
 

@@ -8,9 +8,9 @@
 
 import INDEX from "./index-data.js";
 import {
-  LIMITS, REFUSAL_TEXT, validateRequest, retrieve, confidenceFor,
-  splitSourcesAndRelated, systemPrompt, wantsContact, cacheKeyFor,
-  makeRateLimiter, sse,
+  LIMITS, REFUSAL_TEXT, BLOG_REFUSAL_TEXT, validateRequest, retrieve, confidenceFor,
+  splitSourcesAndRelated, scopeChunks, systemPrompt, blogSystemPrompt, wantsContact,
+  cacheKeyFor, makeRateLimiter, sse,
 } from "./lib.js";
 
 const GEN_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
@@ -55,14 +55,14 @@ export default {
     try { body = await request.json(); } catch { return json({ error: "Body must be JSON." }, 400, cors); }
     const v = validateRequest(body);
     if (!v.ok) return json({ error: v.error }, 400, cors);
-    const { message, history } = v;
+    const { message, history, scope } = v;
 
     // Log volume only — never message contents.
-    console.log(JSON.stringify({ evt: "chat", len: message.length, turns: history.length }));
+    console.log(JSON.stringify({ evt: "chat", scope, len: message.length, turns: history.length }));
 
     // Cache common first-turn questions.
     const cacheable = history.length === 0;
-    const cacheKey = cacheable ? cacheKeyFor(message) : null;
+    const cacheKey = cacheable ? cacheKeyFor(message, scope) : null;
     if (cacheKey) {
       const hit = await caches.default.match(new Request(cacheKey));
       if (hit) {
@@ -71,26 +71,28 @@ export default {
       }
     }
 
-    // Retrieval
-    if (!INDEX.chunks.length || !INDEX.chunks[0].vec) {
+    // Retrieval, restricted to the requested scope.
+    const pool = scopeChunks(INDEX.chunks, scope);
+    if (!pool.length || !pool[0].vec) {
       return json({ error: "The assistant index has not been built yet." }, 503, cors);
     }
     const qe = await env.AI.run(EMBED_MODEL, {
       text: ["Represent this sentence for searching relevant passages: " + message],
     });
-    const ranked = retrieve(qe.data[0], INDEX.chunks);
+    const ranked = retrieve(qe.data[0], pool);
     const confidence = confidenceFor(ranked[0]?.score ?? 0);
     const handoff = wantsContact(message);
+    const refusal = scope === "blog" ? BLOG_REFUSAL_TEXT : REFUSAL_TEXT;
 
     if (!confidence) {
-      const payload = { text: REFUSAL_TEXT, meta: { confidence: "Low", sources: [], related: relatedFallback(), handoff: true } };
+      const payload = { text: refusal, meta: { confidence: "Low", sources: [], related: relatedFallback(scope), handoff: true } };
       if (cacheKey) ctx.waitUntil(putCache(cacheKey, payload));
       return streamReplay(payload, cors);
     }
 
     const { used, sources, related } = splitSourcesAndRelated(ranked);
     const messages = [
-      { role: "system", content: systemPrompt(used) },
+      { role: "system", content: scope === "blog" ? blogSystemPrompt(used) : systemPrompt(used) },
       ...history,
       { role: "user", content: message },
     ];
@@ -150,8 +152,19 @@ export default {
   },
 };
 
-function relatedFallback() {
+function relatedFallback(scope) {
   // Stable pointers for the refusal path so visitors can keep exploring.
+  if (scope === "blog") {
+    const posts = [];
+    const seen = new Set();
+    for (const c of INDEX.chunks) {
+      if (c.type !== "blog" || seen.has(c.url) || !c.title.startsWith("Blog post:")) continue;
+      posts.push({ title: c.title.replace(/^Blog post: /, ""), url: c.url, type: "blog" });
+      seen.add(c.url);
+      if (posts.length >= 3) break;
+    }
+    return posts.length ? posts : [{ title: "Blog", url: "https://rodrigosf.com/blog/", type: "blog" }];
+  }
   return [
     { title: "Projects", url: "https://rodrigosf.com/projects.html", type: "project" },
     { title: "Talks", url: "https://rodrigosf.com/talks.html", type: "talk" },

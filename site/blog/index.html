@@ -15,6 +15,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://rodrigosf.com/assets/og-preview.png">
+  <meta name="assistant-api" content="https://ask-rodrigo.rodrigosf672.workers.dev">
   <link rel="icon" href="/favicon.ico?v=3">
   <script>
     (function () {
@@ -65,7 +66,18 @@ Writing on developer tooling, AI-native development,
 and the Python ecosystem — with interactive marimo
 notebooks that run entirely in your browser.</span>
 
-<span class="prompt">$</span> <span class="cursor" aria-hidden="true"></span></pre>
+<span class="prompt">$</span> <span id="term-line"><input id="term-input" class="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" placeholder="type ask-blog" aria-label="Terminal input. Type ask-blog and press Enter to ask questions about the blog posts."></span></pre>
+
+          <div class="chat" id="chat" data-scope="blog" hidden>
+            <div class="chat-log" role="log" aria-live="polite" aria-label="Conversation with the blog assistant"></div>
+            <form class="chat-form">
+              <label class="visually-hidden" for="chat-input">Ask about the blog posts</label>
+              <span class="prompt" aria-hidden="true">&gt;</span>
+              <input id="chat-input" class="chat-input" type="text" maxlength="800" autocomplete="off" placeholder="ask about the posts… (Esc closes, ↑ history)">
+              <button type="submit" class="chat-send">send</button>
+            </form>
+            <p class="chat-disclaimer">AI-generated responses may be incomplete or inaccurate. Answers are grounded only in the published blog posts; the assistant does not know the books and tools they discuss beyond what the posts say. Please verify against the posts themselves or <a href="mailto:rodrigosf672@gmail.com">contact Rodrigo directly</a>.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -98,6 +110,6 @@ notebooks that run entirely in your browser.</span>
     </div>
   </footer>
 
-  <script src="/main.js?v=7"></script>
+  <script src="/main.js?v=8"></script>
 </body>
 </html>
