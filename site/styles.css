@@ -907,6 +907,22 @@ h3 { font-size: 1.15rem; font-weight: 650; }
   color: var(--text-muted);
   font-style: italic;
 }
+.post-body figure { margin: 1.75rem 0; }
+.post-body figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.post-body figure.portrait { max-width: 26rem; }
+.post-body figcaption {
+  margin-top: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
 .post-excerpt { color: var(--text-muted); font-size: 0.95rem; margin: 0.4rem 0 0; max-width: 42rem; }
 .post-listing .talk-title a { color: var(--text); }
 .post-listing .talk-title a:hover { color: var(--accent); }
