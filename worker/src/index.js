@@ -10,7 +10,7 @@ import INDEX from "./index-data.js";
 import {
   LIMITS, REFUSAL_TEXT, BLOG_REFUSAL_TEXT, validateRequest, retrieve, confidenceFor,
   splitSourcesAndRelated, scopeChunks, systemPrompt, blogSystemPrompt, wantsContact,
-  cacheKeyFor, makeRateLimiter, sse,
+  cacheKeyFor, makeRateLimiter, looksDegenerate, sse,
 } from "./lib.js";
 
 const GEN_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
@@ -102,6 +102,7 @@ export default {
       stream: true,
       max_tokens: LIMITS.MAX_OUTPUT_TOKENS,
       temperature: 0.2,
+      repetition_penalty: 1.1, // guards against degenerate token loops
     });
 
     // Transform Workers AI SSE -> our protocol; capture full text for caching.
@@ -137,7 +138,7 @@ export default {
         }
         await writer.write(enc.encode(sse({ type: "meta", ...meta })));
         await writer.write(enc.encode(sse({ type: "done" })));
-        if (cacheKey && full) await putCache(cacheKey, { text: full, meta });
+        if (cacheKey && full && !looksDegenerate(full)) await putCache(cacheKey, { text: full, meta });
       } catch (e) {
         console.log(JSON.stringify({ evt: "error", msg: String(e).slice(0, 200) }));
         await writer.write(enc.encode(sse({ type: "error", error: "The assistant hit a temporary error. Please try again." })));

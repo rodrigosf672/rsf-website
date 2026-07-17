@@ -168,5 +168,19 @@ export function makeRateLimiter(limit = LIMITS.RATE_PER_HOUR, windowMs = 3600_00
   };
 }
 
+/** Heuristic for degenerate model output (token-loop garbage). Used to avoid
+ * caching a bad generation for a day. Conservative: legit answers with lists,
+ * URLs, or accents must pass. */
+export function looksDegenerate(text) {
+  const tokens = text.split(/\s+/).filter(Boolean);
+  if (tokens.length < 12) return false;
+  const counts = new Map();
+  for (const t of tokens) counts.set(t, (counts.get(t) || 0) + 1);
+  const topShare = Math.max(...counts.values()) / tokens.length;
+  if (topShare > 0.2) return true; // one token dominating = loop
+  const letters = (text.match(/[a-zA-ZÀ-ÿ]/g) || []).length;
+  return letters / text.length < 0.55; // mostly symbols/digits = garbage
+}
+
 /** SSE encoding helpers. */
 export const sse = (obj) => `data: ${JSON.stringify(obj)}\n\n`;
