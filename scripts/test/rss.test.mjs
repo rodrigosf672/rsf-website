@@ -77,3 +77,15 @@ test("main pages advertise the feed for auto-discovery", () => {
     );
   }
 });
+
+test("main pages offer a visible RSS subscribe link", () => {
+  for (const p of ["site/index.html", "site/blog/index.html"]) {
+    const html = readFileSync(join(ROOT, p), "utf8");
+    assert.match(html, /href="\/rss\.xml">rss<\/a>/, `${p} is missing the footer RSS link`);
+  }
+});
+
+test("feed references the human-friendly stylesheet, which exists", () => {
+  assert.match(feed, /<\?xml-stylesheet type="text\/xsl" href="\/rss\.xsl"\?>/);
+  assert.ok(existsSync(join(ROOT, "site/rss.xsl")), "site/rss.xsl is missing");
+});
