@@ -1,0 +1,34 @@
+name: CI
+
+# Runs the fast, deterministic checks on pull requests and on pushes to any
+# branch other than main. (Pushes to main are gated separately inside pages.yml,
+# so production never deploys on a failing test.)
+on:
+  pull_request:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - name: Worker unit tests
+        run: npm run test:worker
+      - name: Index & site-integrity tests
+        run: npm run test:scripts
+      - name: Full index build parses without error
+        run: node scripts/build-index.mjs --dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

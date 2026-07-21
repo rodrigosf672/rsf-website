@@ -9,6 +9,8 @@
   "scripts": {
     "test": "playwright test",
     "test:worker": "node --test worker/test/*.test.mjs",
+    "test:scripts": "node --test scripts/test/*.test.mjs",
+    "test:unit": "npm run test:worker && npm run test:scripts",
     "build:index": "node scripts/build-index.mjs",
     "serve": "python3 -m http.server 4321 --directory site"
   },

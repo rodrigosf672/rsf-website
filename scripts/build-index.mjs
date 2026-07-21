@@ -20,6 +20,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { extractBody } from "./lib/parse-blog.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://rodrigosf.com";
@@ -156,14 +157,7 @@ function indexBlog() {
     titles.push(`"${title}"`);
     add("blog", `Blog post: ${title}`, url, `Blog post "${title}". ${meta}. ${epigraph}`);
 
-    // Capture the whole post body. Anchor the closing tag on the notebook-embed
-    // section (or the back-link), so nested <div>s inside figures/cards don't
-    // truncate the match at the first </div>.
-    const bodyMatch =
-      html.match(/<div class="post-body">([\s\S]*?)<\/div>\s*<section class="notebook-embed"/) ||
-      html.match(/<div class="post-body">([\s\S]*?)<\/div>\s*<p class="post-back"/) ||
-      html.match(/<div class="post-body">([\s\S]*)<\/div>/);
-    const body = (bodyMatch || [, ""])[1];
+    const body = extractBody(html);
     for (const sec of body.split(/<h2>/).slice(1)) {
       const [headRaw, ...restRaw] = sec.split("</h2>");
       const heading = strip(headRaw);
