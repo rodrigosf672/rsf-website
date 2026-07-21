@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What a Questionnaire From 1986 Knows About AI Adoption — Rodrigo Silva Ferreira</title>
+  <meta name="description" content="A reflection on the System Usability Scale, the quiet labor of using AI, and why the oldest instrument in usability research measures what our newest technology struggles with. With an interactive marimo notebook.">
+  <link rel="canonical" href="https://rodrigosf.com/blog/system-usability-scale-ai.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What a Questionnaire From 1986 Knows About AI Adoption">
+  <meta property="og:description" content="The System Usability Scale, the quiet labor of using AI, and why usability measures what benchmarks cannot. With an interactive marimo notebook.">
+  <meta property="og:url" content="https://rodrigosf.com/blog/system-usability-scale-ai.html">
+  <meta property="og:image" content="https://rodrigosf.com/assets/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rodrigosf.com/assets/og-preview.png">
+  <link rel="icon" href="/favicon.ico?v=3">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=8">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="/"><span class="prompt-sign">rodrigo@rsf</span>:~$<span class="cursor" aria-hidden="true"></span></a>
+      <div class="nav-links">
+        <a href="/talks.html">talks</a>
+        <a href="/projects.html">projects</a>
+        <a href="/publications.html">publications</a>
+        <a href="/blog/" aria-current="page">blog</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">--light</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="section post">
+      <div class="container">
+        <span class="kicker">blog</span>
+        <h1>What a Questionnaire From 1986 Knows About AI Adoption</h1>
+        <p class="post-meta">July 21, 2026 · 7 min read · + interactive notebook · on the System Usability Scale and the quiet labor of using AI</p>
+        <blockquote class="epigraph">Benchmarks describe the artifact. Usability describes the relationship. Adoption lives in the relationship.</blockquote>
+        <div class="post-body">
+        <h2>The number we don't collect</h2>
+        <p>Watch how an AI product team talks about itself and you will learn what it believes matters. Benchmark results arrive with decimal places and confidence intervals. Usability, when it comes up at all, arrives as anecdote: a demo that went well, a customer who said something kind. I do not think this is because teams fail to care about users. I think it is because we measure what we own. The model is ours; we trained it, we can score it, and the score improves when we work. The relationship between the product and the person using it belongs to no single team, so it becomes everyone's concern and nobody's metric.</p>
+        <p>There is an instrument for that relationship, and it is older than the web. The System Usability Scale was created by John Brooke in 1986 at Digital Equipment Corporation and published a decade later under a title that undersold it: SUS, a "quick and dirty" usability scale. Ten statements, rated from strongly disagree to strongly agree. A short piece of arithmetic folds the answers into a score from 0 to 100. A respondent needs three minutes.</p>
+        <figure class="sus-card">
+          <div style="border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);">
+            <div style="background:linear-gradient(135deg,#1e3d2f 0%,#2e7d1f 100%);padding:14px 18px;">
+              <div style="color:#f2f7ee;font-size:1.05rem;font-weight:750;">The System Usability Scale</div>
+              <div style="color:#cfe3c4;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.04em;margin-top:3px;">TEN STATEMENTS · 1 = STRONGLY DISAGREE · 5 = STRONGLY AGREE</div>
+            </div>
+            <ol style="list-style:none;margin:0;padding:8px;display:flex;flex-direction:column;gap:2px;">
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--text-faint);min-width:1.6rem;">Q1</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I think that I would like to use this system frequently.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-faint);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;background:var(--accent-dim);"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--accent);min-width:1.6rem;">Q2</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I found the system unnecessarily complex.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--accent);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--text-faint);min-width:1.6rem;">Q3</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I thought the system was easy to use.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-faint);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;background:var(--accent-dim);"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--accent);min-width:1.6rem;">Q4</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I think that I would need the support of a technical person to be able to use this system.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--accent);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--text-faint);min-width:1.6rem;">Q5</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I found the various functions in this system were well integrated.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-faint);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;background:var(--accent-dim);"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--accent);min-width:1.6rem;">Q6</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I thought there was too much inconsistency in this system.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--accent);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--text-faint);min-width:1.6rem;">Q7</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I would imagine that most people would learn to use this system very quickly.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-faint);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;background:var(--accent-dim);"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--accent);min-width:1.6rem;">Q8</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I found the system very cumbersome to use.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--accent);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--text-faint);min-width:1.6rem;">Q9</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I felt very confident using this system.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--text-faint);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+              <li style="display:flex;align-items:center;gap:14px;padding:9px 14px;border-radius:8px;background:var(--accent-dim);"><span style="font-family:var(--font-mono);font-weight:700;font-size:0.82rem;color:var(--accent);min-width:1.6rem;">Q10</span><span style="flex:1;font-size:0.92rem;line-height:1.35;color:var(--text);">I needed to learn a lot of things before I could get going with this system.</span><span style="display:flex;gap:2px;font-family:var(--font-mono);font-size:0.8rem;color:var(--accent);flex-shrink:0;"><span style="width:22px;text-align:center;">1</span><span style="width:22px;text-align:center;">2</span><span style="width:22px;text-align:center;">3</span><span style="width:22px;text-align:center;">4</span><span style="width:22px;text-align:center;">5</span></span></li>
+            </ol>
+            <div style="border-top:1px solid var(--border);padding:10px 18px;font-size:0.8rem;color:var(--text-muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <span style="display:inline-block;width:26px;height:14px;border-radius:4px;background:var(--accent-dim);border:1px solid var(--accent);flex-shrink:0;"></span>
+              <span>Highlighted items are negatively worded, so their scale reverses when the score is computed. Alternating polarity keeps respondents reading rather than pattern-clicking.</span>
+            </div>
+          </div>
+          <figcaption>The ten System Usability Scale statements, the instrument introduced by John Brooke (1996). Recreated in the house style.</figcaption>
+        </figure>
+        <h2>An instrument for relationships, not artifacts</h2>
+        <p>Every system we ship becomes, on arrival, a sociotechnical system: the artifact, plus the person, plus the practices that grow between them. Most of our measurements see only the artifact. What strikes me about SUS, reading it four decades later, is that its questions never mention technology at all. There are no windows in it, no screens, no clicks, nothing that could go obsolete. It asks about complexity, confidence, learnability, integration, the felt sense of needing help. These are properties of the relationship, not of the machine, which is why the same ten questions that once scored green-screen terminals can score an AI assistant without a word of revision.</p>
+        <p>That neutrality explains its survival better than any statistical property, though the statistics hold up too. Instruments endure when they are cheap enough to run every release and stable enough to compare across years. SUS is both, and so it quietly became a common language: the same scale has been applied to software, websites, medical devices, scientific equipment, and healthcare systems.</p>
+        <h2>When usability is load-bearing</h2>
+        <p>The medical and scientific studies are the ones I find myself thinking about most. When Kortum and Peres assessed home health care devices through remote usability testing (<a href="https://humanfactors.jmir.org/2015/1/e10/">JMIR Human Factors, 2015</a>), the question underneath the study was not whether patients would find the devices pleasant. It was whether the technology could be trusted to work in ordinary hands, away from the people who built it. In clinical and laboratory settings, usability shapes workflow efficiency, error rates, reproducibility, and user confidence.</p>
+        <figure>
+          <img src="kortum-peres-fig2.jpg" alt="Bar chart of mean SUS scores: everyday products in gray (Google search near 93, microwave oven near 87, Excel near 56) interleaved with home health care devices in black (thermometer near 80, EpiPen near 65)" width="863" height="650" loading="lazy" style="background:#ffffff;padding:10px;">
+          <figcaption>Home health care devices (black) and everyday products (gray) on the same SUS scale. Figure 2 from <a href="https://humanfactors.jmir.org/2015/1/e10/">Kortum &amp; Peres (2015), JMIR Human Factors</a>, reproduced under the <a href="https://creativecommons.org/licenses/by/2.0/">Creative Commons Attribution license (CC BY 2.0)</a>.</figcaption>
+        </figure>
+        <p>Sit with that chart, and hold it loosely. An EpiPen, a device a person must operate correctly during anaphylaxis, scores lower on usability than a microwave oven. But the chart is a snapshot of relationships, taken at particular moments with particular people. The gray bars summarize ratings from more than a thousand users in a companion study published in 2013; the black bars come from 271 Rice University undergraduates who rated 455 devices in their own homes, with no experimenter present, published in 2015. Google search tops the chart in the low nineties as measured then, before results pages thickened with ads and, more recently, AI-generated answers arriving above the results themselves. Would it score the same today? I genuinely do not know, and the not-knowing is instructive: products drift, relationships drift with them, and a forty-year-old instrument sits there, ready to ask again.</p>
+        <p>The details reward wondering. The thermometer earned the highest score of any medical device in the study, 80.5 across 227 ratings, and I cannot say whether that is a triumph of design or a century of cultural familiarity: its job fits in a sentence, and every rater grew up with one. The iPhone reads in the high seventies on the chart, below the microwave oven, which complicates any easy equation between usability and popularity; whatever moves a billion people to carry a product in their pockets, these ten questions alone do not capture it. And the EpiPen sits last among the devices at 65.3, on just 11 ratings, a sample small enough to be cautious with. Is that a design failure? Is it what any score must look like for a device used rarely, under panic, on training rather than practice? Or does it partly reflect who was asked, healthy undergraduates rather than the patients whose lives depend on it? A SUS score is always a measurement of someone's relationship with a system, and the someone, like the when, is part of the result.</p>
+        <p>Reproducibility is the item on the stakes list I keep returning to: a system that people use inconsistently produces results that do not replicate, no matter how sound the underlying instrument is. Usability, in other words, is part of the machinery that keeps knowledge reliable. It is not a coat of paint on top of the science; it is load-bearing. I find it hard to read that sentence and not think about AI systems, where the "ordinary hands" now belong to all of us, and where the outputs feed decisions, analyses, and published work.</p>
+        <h2>The quiet labor of using AI</h2>
+        <p>Traditional software ran a short loop: user action, system response. The contract was legible, and when the system broke it, the failure was visible. AI products stretch the loop into something longer and less certain: user intention, AI interpretation, probabilistic output, human evaluation. That last step deserves more attention than it gets, because it is new work, and we have transferred it to users mostly without saying so.</p>
+        <figure>
+          <svg viewBox="0 0 820 250" role="img" aria-label="Diagram comparing two interaction loops. Traditional software: user action leads to system response, two steps. AI products: user intention leads to AI interpretation, then probabilistic output, then human evaluation, four steps, with the final human evaluation step highlighted as the new work transferred to users." style="width:100%;height:auto;font-family:var(--font-sans);">
+            <defs>
+              <marker id="arrG" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 1 1 L 11 6 L 1 11" fill="none" stroke="var(--text-faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+              <marker id="arrA" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                <path d="M 1 1 L 11 6 L 1 11" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </marker>
+            </defs>
+
+            <!-- Traditional row -->
+            <rect x="8" y="34" width="120" height="26" rx="13" fill="none" stroke="var(--border-strong)"/>
+            <text x="68" y="51" text-anchor="middle" font-family="var(--font-mono)" font-size="11" letter-spacing="1" fill="var(--text-faint)">TRADITIONAL</text>
+            <rect x="200" y="26" width="180" height="44" rx="10" fill="var(--bg-inset)" stroke="var(--border-strong)"/>
+            <text x="290" y="53" text-anchor="middle" font-size="14" fill="var(--text)">User action</text>
+            <line x1="388" y1="48" x2="452" y2="48" stroke="var(--text-faint)" stroke-width="2" marker-end="url(#arrG)"/>
+            <rect x="460" y="26" width="180" height="44" rx="10" fill="var(--bg-inset)" stroke="var(--border-strong)"/>
+            <text x="550" y="53" text-anchor="middle" font-size="14" fill="var(--text)">System response</text>
+            <text x="650" y="53" font-family="var(--font-mono)" font-size="11" fill="var(--text-faint)">2 steps</text>
+
+            <!-- AI row -->
+            <rect x="8" y="150" width="120" height="26" rx="13" fill="none" stroke="var(--accent)"/>
+            <text x="68" y="167" text-anchor="middle" font-family="var(--font-mono)" font-size="11" letter-spacing="1" fill="var(--accent)">AI PRODUCTS</text>
+            <rect x="150" y="142" width="140" height="44" rx="10" fill="var(--bg-inset)" stroke="var(--border-strong)"/>
+            <text x="220" y="169" text-anchor="middle" font-size="13" fill="var(--text)">User intention</text>
+            <line x1="292" y1="164" x2="316" y2="164" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrA)"/>
+            <rect x="318" y="142" width="150" height="44" rx="10" fill="var(--bg-inset)" stroke="var(--border-strong)"/>
+            <text x="393" y="169" text-anchor="middle" font-size="13" fill="var(--text)">AI interpretation</text>
+            <line x1="470" y1="164" x2="494" y2="164" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrA)"/>
+            <rect x="496" y="142" width="158" height="44" rx="10" fill="var(--bg-inset)" stroke="var(--border-strong)"/>
+            <text x="575" y="169" text-anchor="middle" font-size="13" fill="var(--text)">Probabilistic output</text>
+            <line x1="656" y1="164" x2="680" y2="164" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrA)"/>
+            <rect x="682" y="140" width="130" height="48" rx="10" fill="var(--accent-dim)" stroke="var(--accent)" stroke-width="2"/>
+            <text x="747" y="162" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">Human</text>
+            <text x="747" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">evaluation</text>
+            <text x="747" y="212" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--accent)">the new, quiet work</text>
+          </svg>
+          <figcaption>The interaction loop, before and after. Traditional software answers in two steps; AI products add two more, and the last one, human evaluation, is work quietly transferred to the user. Every added step is a usability question benchmarks never see.</figcaption>
+        </figure>
+        <p>To use an AI system well, a person must continually make judgments the software never used to demand of them:</p>
+        <ul>
+          <li>whether an output is <strong>correct</strong>, or merely fluent;</li>
+          <li>how <strong>confident</strong> the system is, and how much of that confidence to inherit;</li>
+          <li>when a result can be <strong>trusted</strong> without checking;</li>
+          <li>whether the reasoning behind it can be <strong>inspected</strong> at all;</li>
+          <li>and how quickly a mistake can be <strong>noticed and undone</strong>.</li>
+        </ul>
+        <p>Trust, in the human sense, is permission to stop verifying. Every AI product implicitly asks its users for that permission, and most give them very little evidence on which to grant it.</p>
+        <p>This is why I keep returning to a simple framing: technical capability alone does not create adoption. People adopt systems they understand, trust, and can confidently accomplish their goals with. A model can lead every leaderboard and still fail each of those human tests. The gap between capability and adoption is a usability gap, and it runs through AI assistants, developer tools, scientific computing workflows, enterprise AI platforms, and data science tools alike.</p>
+        <p>The notebook below lets you try these ideas directly. First, take the SUS about a product you actually use: answer the ten questions, and watch the score, its grade, and a per-question breakdown of where you are losing points update as you go. Then open the simulator. It builds two AI products on the same underlying model, one powerful but hard to trust, the other candid about its limits and built around the workflow, and gives you three sliders that separate them: trust communication, learnability, and complexity. Raise only the trust slider, leave the other two where they are, and see how far the score moves. That one lever, being honest about what the system can and cannot do, costs less than almost anything on a product roadmap, and ships far less often than it should.</p>
+        <h2>What one number can hold</h2>
+        <p>The average SUS score across many hundreds of product studies is about 68, and interpretation follows a curve rather than a percentage: 68 is average, 80 is genuinely good, and above 90 is rare. Kortum and Peres plotted their devices on exactly this interpretive scale, three vocabularies layered over one number:</p>
+        <figure>
+          <img src="kortum-peres-fig3.jpg" alt="Home health care devices plotted on the SUS interpretive scale from 50 to 100, showing acceptability ranges (low marginal, high marginal, acceptable), adjective ratings (fair, good, excellent, best imaginable), and grade bands F through A. The EpiPen sits near 65 in the D band; the thermometer near 81." width="1600" height="651" loading="lazy" style="background:#ffffff;padding:10px;">
+          <figcaption>The same devices on the interpretive scale: acceptability ranges, adjective ratings, and grades layered over one number. Figure 3 from <a href="https://humanfactors.jmir.org/2015/1/e10/">Kortum &amp; Peres (2015), JMIR Human Factors</a>, also <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. The notebook below puts an interactive version of this scale under your own score.</figcaption>
+        </figure>
+        <p>A single score is a compression, and compressions are honest only if we remember what they discard. SUS will not tell you which design decision to change, and it will not tell you whether your model is good. What it holds is something benchmarks cannot: whether people understand the system, trust the workflow, and can achieve what they came to do. Capability and usability are separate measurements, and a product needs both to be adopted: one that is only capable is a demonstration, and one that is only usable is a pleasant tool nobody needs.</p>
+        <h2>Translation is the work</h2>
+        <p>Carrying a technical product toward its users means working between two vocabularies, measured by different instruments and often owned by different teams: what the product enables, and why anyone would adopt it. Usability research is the evidence that lets the two check each other, and SUS is the version cheap enough to gather every release and steady enough to settle a roadmap argument.</p>
+        <p>My experience conducting usability testing at Minitab and later conducting usability testing with internal and external users for Posit's IDE Jupyter notebook frontend reinforced that products succeed when teams understand user workflows, not just feature requirements. Sitting beside someone as they use the thing you helped build is a humbling form of measurement, and the humility is the data.</p>
+        <p>Great technology creates possibilities. Great usability turns those possibilities into adoption.</p>
+        <p>If you run a SUS study on an AI product, I would like to hear what you found, especially where the number disagreed with your team's intuition. Those disagreements are usually where the relationship is trying to tell you something. <a href="mailto:rodrigosf672@gmail.com?subject=SUS%20on%20an%20AI%20product">Write to me</a>.</p>
+        <div class="post-refs">
+          <p class="refs-head">References &amp; further reading</p>
+          <ul>
+            <li>Brooke, J. (1996). SUS: A "Quick and Dirty" Usability Scale. In <em>Usability Evaluation in Industry</em>. Taylor &amp; Francis. <span style="color:var(--text-faint)">The original instrument.</span></li>
+            <li>Kortum, P., &amp; Peres, S. C. (2015). Evaluation of Home Health Care Devices: Remote Usability Assessment. <em>JMIR Human Factors</em>, 2(1), e10. <a href="https://humanfactors.jmir.org/2015/1/e10/">humanfactors.jmir.org/2015/1/e10</a> <span style="color:var(--text-faint)">Source of the two figures (CC BY 2.0); the black bars.</span></li>
+            <li>Kortum, P. T., &amp; Bangor, A. (2013). Usability Ratings for Everyday Products Measured With the System Usability Scale. <em>International Journal of Human-Computer Interaction</em>, 29(2), 67&ndash;76. <span style="color:var(--text-faint)">The companion study behind the gray bars.</span></li>
+            <li>Sauro, J. (2011). <em>A Practical Guide to the System Usability Scale</em>. Measuring Usability LLC. <span style="color:var(--text-faint)">Source of the curved grade interpretation used here.</span></li>
+            <li><a href="https://blog.uxtweak.com/system-usability-scale/">UXtweak, The System Usability Scale (SUS): guide</a>. <span style="color:var(--text-faint)">A practitioner walkthrough of the scoring mechanics.</span></li>
+          </ul>
+        </div>
+        </div>
+
+        <section class="notebook-embed" aria-labelledby="nb-h">
+          <h2 id="nb-h">The interactive companion</h2>
+          <p class="prose" style="margin-bottom:1rem">Take the SUS, watch the score assemble itself, and simulate AI product decisions, all as a live <a href="https://marimo.io">marimo</a> notebook compiled to WebAssembly. Python runs in your browser; nothing is sent anywhere. It may take a few seconds to boot. <a href="/blog/sus-notebook/">Open it full screen →</a></p>
+          <div class="nb-frame">
+            <iframe src="/blog/sus-notebook/" title="Interactive marimo notebook: The System Usability Scale, interactively" loading="lazy"></iframe>
+          </div>
+        </section>
+
+        <p class="post-back"><a href="/blog/">← All posts</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="echo"><span class="prompt-sign">$</span> echo <span class="str">"Measure the relationship, not just the artifact."</span></p>
+      <p>© 2026 Rodrigo Silva Ferreira · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · handcrafted HTML &amp; CSS, no framework</p>
+      <div class="foot-links">
+        <a href="https://github.com/rodrigosf672">github</a>
+        <a href="https://www.linkedin.com/in/rsf309/">linkedin</a>
+        <a href="https://www.youtube.com/@rodrigosf672">youtube</a>
+        <a href="https://scholar.google.com/citations?user=FoA5dgMAAAAJ">scholar</a>
+        <a href="mailto:rodrigosf672@gmail.com">email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=8"></script>
+</body>
+</html>
