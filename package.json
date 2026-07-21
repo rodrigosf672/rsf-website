@@ -12,6 +12,7 @@
     "test:scripts": "node --test scripts/test/*.test.mjs",
     "test:unit": "npm run test:worker && npm run test:scripts",
     "build:index": "node scripts/build-index.mjs",
+    "build:rss": "node scripts/build-rss.mjs",
     "serve": "python3 -m http.server 4321 --directory site"
   },
   "keywords": [],

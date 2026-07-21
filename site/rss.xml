@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Blog — Rodrigo Silva Ferreira</title>
+    <link>https://rodrigosf.com/blog/</link>
+    <description>Writing on developer tooling, AI-native development, and the Python ecosystem, with interactive marimo notebooks.</description>
+    <language>en-us</language>
+    <managingEditor>rodrigosf672@gmail.com (Rodrigo Silva Ferreira)</managingEditor>
+    <webMaster>rodrigosf672@gmail.com (Rodrigo Silva Ferreira)</webMaster>
+    <lastBuildDate>Tue, 21 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://rodrigosf.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>What a Questionnaire From 1986 Knows About AI Adoption</title>
+      <link>https://rodrigosf.com/blog/system-usability-scale-ai.html</link>
+      <description>A reflection on the System Usability Scale, the quiet labor of using AI, and why the oldest instrument in usability research measures what our newest technology struggles with. With an interactive marimo notebook.</description>
+      <dc:creator>Rodrigo Silva Ferreira</dc:creator>
+      <category>essay</category>
+      <category>interactive marimo notebook</category>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://rodrigosf.com/blog/system-usability-scale-ai.html</guid>
+    </item>
+    <item>
+      <title>The Raffle Ticket That Rewired How I Think About AI Products</title>
+      <link>https://rodrigosf.com/blog/generative-ai-in-action-review.html</link>
+      <description>A developer-tooling perspective on Amit Bahree&apos;s Generative AI in Action: why the book&apos;s real lesson is architecture, evaluation, and trust, not prompts.</description>
+      <dc:creator>Rodrigo Silva Ferreira</dc:creator>
+      <category>book review</category>
+      <category>interactive marimo notebook</category>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
+      <guid isPermaLink="true">https://rodrigosf.com/blog/generative-ai-in-action-review.html</guid>
+    </item>
+  </channel>
+</rss>
