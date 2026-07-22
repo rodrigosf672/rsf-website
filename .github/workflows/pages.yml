@@ -30,9 +30,7 @@ jobs:
         run: npm run test:scripts
 
   # Gate: Playwright suites run against a locally served site/ (the exact
-  # content being deployed). The live domain sits behind Cloudflare, whose bot
-  # protection 403s headless browsers on GitHub runners, so live-URL smoke
-  # tests are inherently flaky from CI.
+  # content being deployed), so broken content can never ship.
   site-tests:
     runs-on: ubuntu-latest
     steps:
@@ -69,7 +67,29 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  # Post-deploy verification against the real deployment. Requires the
+  # Cloudflare bot-protection exception for CI (relaxed July 2026); if this
+  # ever starts failing with 403s again, that exception is the first suspect —
+  # the content itself is already gated by site-tests.
+  smoke-test:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm install && npx playwright install --with-deps --no-shell chromium
+      - name: Run Site Critical Tests against live site
+        run: npx playwright test tests/site-critical.spec.ts
+        env:
+          CI: true
+          BASE_URL: ${{ needs.deploy.outputs.page_url || 'https://rodrigosf.com' }}
