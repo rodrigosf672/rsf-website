@@ -1,0 +1,42 @@
+name: Monthly homepage screenshot
+
+# Regenerates docs/homepage.png (the README banner) from the live site once a
+# month. Commits made with GITHUB_TOKEN don't retrigger workflows, so this never
+# kicks off a Pages deploy or loops.
+on:
+  schedule:
+    - cron: "0 6 1 * *" # 06:00 UTC on the 1st of each month
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      - name: Install Chromium
+        run: npx playwright install --with-deps --no-shell chromium
+      - name: Capture homepage
+        run: node scripts/screenshot-home.mjs
+        env:
+          BASE_URL: https://rodrigosf.com
+      - name: Commit if the screenshot changed
+        run: |
+          if git diff --quiet -- docs/homepage.png; then
+            echo "No visual change; nothing to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/homepage.png
+            git commit -m "Update homepage screenshot for README"
+            git push
+          fi

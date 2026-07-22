@@ -1,5 +1,9 @@
 # rsf-website
 
+[![Homepage of rodrigosf.com](docs/homepage.png)](https://rodrigosf.com/)
+
+<sub>The banner above is refreshed automatically from the live site on the 1st of each month by [`homepage-screenshot.yml`](.github/workflows/homepage-screenshot.yml).</sub>
+
 Source for [rodrigosf.com](https://rodrigosf.com/) — the personal website of Rodrigo Silva Ferreira.
 
 Handcrafted static HTML and CSS — no framework, no build step. Dark-first, terminal-inspired design with a light theme toggle.
