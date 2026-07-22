@@ -69,3 +69,7 @@ jobs:
         env:
           CI: true
           BASE_URL: ${{ needs.deploy.outputs.page_url || 'https://rodrigosf.com' }}
+      - name: Run References Tests (local build)
+        run: npm run test:references
+        env:
+          CI: true

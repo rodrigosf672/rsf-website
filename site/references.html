@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>References — Rodrigo Silva Ferreira</title>
+  <meta name="description" content="Recommendations from colleagues and managers at Posit PBC, with skills distilled from their words by topic modeling.">
+  <link rel="canonical" href="https://rodrigosf.com/references.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="References — Rodrigo Silva Ferreira">
+  <meta property="og:description" content="Recommendations from colleagues and managers at Posit PBC.">
+  <meta property="og:url" content="https://rodrigosf.com/references.html">
+  <meta property="og:image" content="https://rodrigosf.com/assets/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rodrigosf.com/assets/og-preview.png">
+  <link rel="icon" href="/favicon.ico?v=3">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" title="Rodrigo Silva Ferreira Blog" href="/rss.xml">
+  <link rel="stylesheet" href="/styles.css?v=9">
+  <style>
+    .skills-intro { color: var(--text-muted); max-width: 44rem; margin: 0.75rem 0 0; font-size: 0.95rem; }
+    .skills-intro details { margin-top: 0.4rem; }
+    .skills-intro summary { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); cursor: pointer; }
+    .skills-intro .method { font-size: 0.88rem; color: var(--text-muted); margin-top: 0.6rem; line-height: 1.6; max-width: 42rem; }
+    .skills-intro .method p { margin: 0 0 0.7rem; }
+    .skills-intro .method strong { color: var(--text); font-weight: 650; }
+    .method-diagram { margin: 1rem 0; padding: 14px 16px; background: #ffffff; border: 1px solid var(--border); border-radius: 12px; overflow-x: auto; }
+    .method-diagram svg { height: auto; max-width: none; display: block; margin: 0 auto; }
+    .method-steps { list-style: none; padding: 0; margin: 0.6rem 0 0.8rem; }
+    .method-steps li { display: flex; gap: 0.65rem; align-items: flex-start; margin: 0.55rem 0; }
+    .method-steps .step-n { flex-shrink: 0; width: 1.45rem; height: 1.45rem; border-radius: 50%; background: var(--accent-dim); color: var(--accent); border: 1.5px solid var(--accent); font-family: var(--font-mono); font-weight: 700; font-size: 0.76rem; display: grid; place-items: center; margin-top: 1px; }
+    .method-note { font-style: italic; color: var(--text-faint); }
+    .cloud { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; max-width: 52rem; margin: 1.4rem 0 0; }
+    /* every theme is rendered identically: same size, same green. no ranking implied. */
+    .skill {
+      position: relative; font-family: var(--font-mono); font-weight: 600; line-height: 1;
+      font-size: 0.95rem; padding: 9px 17px; border-radius: 99px;
+      color: var(--accent); background: var(--accent-dim); border: 1.5px solid var(--accent);
+      cursor: help; white-space: nowrap; transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .skill:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(46,125,31,0.18); }
+    .skill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .skill.pop-open { z-index: 40; }
+    .skill-pop {
+      position: absolute; left: 0; top: calc(100% + 8px);
+      width: min(370px, 84vw); background: var(--bg-raised); border: 1px solid var(--border-strong);
+      border-radius: 12px; box-shadow: var(--shadow); padding: 13px 16px; z-index: 30; text-align: left;
+      opacity: 0; visibility: hidden; transform: translateY(4px); transition: opacity .13s ease, transform .13s ease;
+      font-family: var(--font-sans); font-weight: 400; white-space: normal;
+    }
+    .skill.pop-open .skill-pop { opacity: 1; visibility: visible; transform: translateY(0); }
+    .sp-kw { display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint);
+             padding-bottom: 8px; margin-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .sp-item { display: block; font-size: 0.86rem; line-height: 1.5; }
+    .sp-item + .sp-item { margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid var(--border); }
+    .sp-jump { display: block; color: var(--text); text-decoration: none; cursor: pointer;
+               border-radius: 6px; margin: 0 -6px; padding: 3px 6px; transition: background .12s; }
+    .sp-jump:hover { background: var(--accent-dim); }
+    .sp-jump::after { content: " \2193"; color: var(--accent); font-weight: 700; opacity: 0; transition: opacity .12s; }
+    .sp-jump:hover::after { opacity: 0.8; }
+    .sp-by { display: block; margin-top: 4px; font-size: 0.78rem; padding: 0 6px; }
+    .sp-by a { color: var(--accent); text-decoration: none; }
+    .sp-by a:hover { text-decoration: underline; }
+
+    .refs-grid { columns: 2 360px; column-gap: 1.5rem; margin-top: 1rem; }
+    @media (max-width: 640px) { .refs-grid { columns: 1; } }
+    .ref {
+      break-inside: avoid; background: var(--bg-raised);
+      border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem 1.6rem 1.35rem;
+      box-shadow: var(--shadow); position: relative; margin: 0 0 1.5rem;
+    }
+    .ref::before {
+      content: "\201C"; position: absolute; top: 0.35rem; left: 0.85rem;
+      font-family: Georgia, serif; font-size: 3.3rem; line-height: 1; color: var(--accent); opacity: 0.13; pointer-events: none;
+    }
+    .ref-quote { color: var(--text-muted); font-size: 0.96rem; line-height: 1.66; position: relative; }
+    .ref-quote p { margin: 0 0 0.8rem; }
+    .ref-quote p:last-child { margin-bottom: 0; }
+    .hl { border-radius: 4px; transition: background .2s ease, box-shadow .2s ease, color .2s ease; scroll-margin-top: 90px; cursor: pointer; }
+    .hl.on { background: #a6ec86; color: #10230a; box-shadow: 0 0 0 4px #a6ec86; font-weight: 500; }
+    .ref-by { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .ref-name a { font-weight: 700; color: var(--text); font-size: 0.95rem; text-decoration: none; }
+    .ref-name a:hover { color: var(--accent); }
+    .ref-name .ext { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-faint); }
+    .ref-title { color: var(--text-faint); font-size: 0.8rem; margin-top: 2px; line-height: 1.4; }
+    .ref-tags { margin-top: 0.6rem; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+    .ref-pill { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: var(--accent-dim); border-radius: 99px; padding: 3px 10px; }
+    .ref-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-faint); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="/"><span class="prompt-sign">rodrigo@rsf</span>:~$<span class="cursor" aria-hidden="true"></span></a>
+      <div class="nav-links">
+        <a href="/talks.html">talks</a>
+        <a href="/projects.html">projects</a>
+        <a href="/publications.html">publications</a>
+        <a href="/references.html" aria-current="page">references</a>
+        <a href="/blog/">blog</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">--light</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="section">
+      <div class="container">
+        <span class="kicker">references</span>
+        <h1>References</h1>
+        <p class="lede">Recommendations from colleagues and managers at Posit PBC.</p>
+        <p class="skills-intro">The themes below were surfaced by topic modeling every sentence in the references. Hover a theme for its model keywords and source quotes, then click a quote to jump to it in the testimonial below.
+          <details>
+            <summary>how this was built</summary>
+            <div class="method">
+              <p>The green themes aren't hand-picked. A small text-analysis pipeline surfaced them from what people actually wrote:</p>
+              <figure class="method-diagram"><svg id="mermaid-1784679318359" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 1266.828125px;" viewBox="0 0 1266.828125 94" role="img" aria-label="Five-step pipeline, numbered 1 to 5: six recommendations, split into about 32 sentences, vectorized with TF-IDF in scikit-learn, clustered into themes with NMF topic modeling, then named from top words to become the green tags." aria-roledescription="flowchart-v2"><style>#mermaid-1784679318359{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#1e3d2f;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1784679318359 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1784679318359 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1784679318359 .error-icon{fill:#552222;}#mermaid-1784679318359 .error-text{fill:#552222;stroke:#552222;}#mermaid-1784679318359 .edge-thickness-normal{stroke-width:1px;}#mermaid-1784679318359 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1784679318359 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1784679318359 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1784679318359 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1784679318359 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1784679318359 .marker{fill:#1e3d2f;stroke:#1e3d2f;}#mermaid-1784679318359 .marker.cross{stroke:#1e3d2f;}#mermaid-1784679318359 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1784679318359 p{margin:0;}#mermaid-1784679318359 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#1e3d2f;}#mermaid-1784679318359 .cluster-label text{fill:#1e3d2f;}#mermaid-1784679318359 .cluster-label span{color:#1e3d2f;}#mermaid-1784679318359 .cluster-label span p{background-color:transparent;}#mermaid-1784679318359 .label text,#mermaid-1784679318359 span{fill:#1e3d2f;color:#1e3d2f;}#mermaid-1784679318359 .node rect,#mermaid-1784679318359 .node circle,#mermaid-1784679318359 .node ellipse,#mermaid-1784679318359 .node polygon,#mermaid-1784679318359 .node path{fill:#eef4ea;stroke:#2e7d1f;stroke-width:1px;}#mermaid-1784679318359 .rough-node .label text,#mermaid-1784679318359 .node .label text,#mermaid-1784679318359 .image-shape .label,#mermaid-1784679318359 .icon-shape .label{text-anchor:middle;}#mermaid-1784679318359 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1784679318359 .rough-node .label,#mermaid-1784679318359 .node .label,#mermaid-1784679318359 .image-shape .label,#mermaid-1784679318359 .icon-shape .label{text-align:center;}#mermaid-1784679318359 .node.clickable{cursor:pointer;}#mermaid-1784679318359 .root .anchor path{fill:#1e3d2f!important;stroke-width:0;stroke:#1e3d2f;}#mermaid-1784679318359 .arrowheadPath{fill:#1e3d2f;}#mermaid-1784679318359 .edgePath .path{stroke:#1e3d2f;stroke-width:1px;}#mermaid-1784679318359 .flowchart-link{stroke:#1e3d2f;fill:none;}#mermaid-1784679318359 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1784679318359 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mermaid-1784679318359 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1784679318359 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mermaid-1784679318359 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1784679318359 .cluster text{fill:#1e3d2f;}#mermaid-1784679318359 .cluster span{color:#1e3d2f;}#mermaid-1784679318359 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1784679318359 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#1e3d2f;}#mermaid-1784679318359 rect.text{fill:none;stroke-width:0;}#mermaid-1784679318359 .icon-shape,#mermaid-1784679318359 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mermaid-1784679318359 .icon-shape p,#mermaid-1784679318359 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mermaid-1784679318359 .icon-shape .label rect,#mermaid-1784679318359 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mermaid-1784679318359 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1784679318359 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1784679318359 .node .neo-node{stroke:#2e7d1f;}#mermaid-1784679318359 [data-look="neo"].node rect,#mermaid-1784679318359 [data-look="neo"].cluster rect,#mermaid-1784679318359 [data-look="neo"].node polygon{stroke:#2e7d1f;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1784679318359 [data-look="neo"].swimlane.cluster rect{filter:none;}#mermaid-1784679318359 [data-look="neo"].node path{stroke:#2e7d1f;stroke-width:1px;}#mermaid-1784679318359 [data-look="neo"].node .outer-path{filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1784679318359 [data-look="neo"].node .neo-line path{stroke:#2e7d1f;filter:none;}#mermaid-1784679318359 [data-look="neo"].node circle{stroke:#2e7d1f;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1784679318359 [data-look="neo"].node circle .state-start{fill:#000000;}#mermaid-1784679318359 [data-look="neo"].icon-shape .icon{fill:#2e7d1f;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1784679318359 [data-look="neo"].icon-shape .icon-neo path{stroke:#2e7d1f;filter:drop-shadow(1px 2px 2px rgba(185, 185, 185, 1));}#mermaid-1784679318359 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-1784679318359_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1784679318359_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1784679318359_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1784679318359_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></polygon></marker><marker id="mermaid-1784679318359_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1784679318359_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1784679318359_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1784679318359_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"></circle></marker><marker id="mermaid-1784679318359_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1784679318359_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mermaid-1784679318359_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"></path></marker><marker id="mermaid-1784679318359_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M229.547,47L233.714,47C237.88,47,246.214,47,253.88,47C261.547,47,268.547,47,272.047,47L275.547,47" id="mermaid-1784679318359-L_A_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A_B_0" data-points="W3sieCI6MjI5LjU0Njg3NSwieSI6NDd9LHsieCI6MjU0LjU0Njg3NSwieSI6NDd9LHsieCI6Mjc5LjU0Njg3NSwieSI6NDd9XQ==" data-look="classic" marker-end="url(#mermaid-1784679318359_flowchart-v2-pointEnd)"></path><path d="M440.422,47L444.589,47C448.755,47,457.089,47,464.755,47C472.422,47,479.422,47,482.922,47L486.422,47" id="mermaid-1784679318359-L_B_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_C_0" data-points="W3sieCI6NDQwLjQyMTg3NSwieSI6NDd9LHsieCI6NDY1LjQyMTg3NSwieSI6NDd9LHsieCI6NDkwLjQyMTg3NSwieSI6NDd9XQ==" data-look="classic" marker-end="url(#mermaid-1784679318359_flowchart-v2-pointEnd)"></path><path d="M701.172,47L705.339,47C709.505,47,717.839,47,725.505,47C733.172,47,740.172,47,743.672,47L747.172,47" id="mermaid-1784679318359-L_C_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C_D_0" data-points="W3sieCI6NzAxLjE3MTg3NSwieSI6NDd9LHsieCI6NzI2LjE3MTg3NSwieSI6NDd9LHsieCI6NzUxLjE3MTg3NSwieSI6NDd9XQ==" data-look="classic" marker-end="url(#mermaid-1784679318359_flowchart-v2-pointEnd)"></path><path d="M972.969,47L977.135,47C981.302,47,989.635,47,997.302,47C1004.969,47,1011.969,47,1015.469,47L1018.969,47" id="mermaid-1784679318359-L_D_E_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_D_E_0" data-points="W3sieCI6OTcyLjk2ODc1LCJ5Ijo0N30seyJ4Ijo5OTcuOTY4NzUsInkiOjQ3fSx7IngiOjEwMjIuOTY4NzUsInkiOjQ3fV0=" data-look="classic" marker-end="url(#mermaid-1784679318359_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_B_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_C_D_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_D_E_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="mermaid-1784679318359-flowchart-A-0" data-look="classic" transform="translate(118.7734375, 47)"><rect class="basic label-container" style="" x="-110.7734375" y="-39" width="221.546875" height="78"></rect><g class="label" style="" transform="translate(-80.7734375, -24)"><rect></rect><foreignObject width="161.546875" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>①  6 recommendations<br>plain text</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1784679318359-flowchart-B-1" data-look="classic" transform="translate(359.984375, 47)"><rect class="basic label-container" style="" x="-80.4375" y="-39" width="160.875" height="78"></rect><g class="label" style="" transform="translate(-50.4375, -24)"><rect></rect><foreignObject width="100.875" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>②  Split into<br>~32 sentences</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1784679318359-flowchart-C-3" data-look="classic" transform="translate(595.796875, 47)"><rect class="basic label-container" style="" x="-105.375" y="-39" width="210.75" height="78"></rect><g class="label" style="" transform="translate(-75.375, -24)"><rect></rect><foreignObject width="150.75" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>③  Vectorize the text<br>TF-IDF · scikit-learn</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1784679318359-flowchart-D-5" data-look="classic" transform="translate(862.0703125, 47)"><rect class="basic label-container" style="" x="-110.8984375" y="-39" width="221.796875" height="78"></rect><g class="label" style="" transform="translate(-80.8984375, -24)"><rect></rect><foreignObject width="161.796875" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>④  Cluster into themes<br>NMF topic modeling</p></span></div></foreignObject></g></g><g class="node default" id="mermaid-1784679318359-flowchart-E-7" data-look="classic" transform="translate(1140.8984375, 47)"><rect class="basic label-container" style="" x="-117.9296875" y="-39" width="235.859375" height="78"></rect><g class="label" style="" transform="translate(-87.9296875, -24)"><rect></rect><foreignObject width="175.859375" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>⑤  Name from top words<br>the green tags</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="mermaid-1784679318359-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs><defs><filter id="mermaid-1784679318359-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"></feDropShadow></filter></defs><linearGradient id="mermaid-1784679318359-gradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="hsl(40.5882352941, 60%, 83.3333333333%)" stop-opacity="1"></stop><stop offset="100%" stop-color="hsl(-79.4117647059, 60%, 83.3333333333%)" stop-opacity="1"></stop></linearGradient></svg></figure>
+              <ol class="method-steps">
+                <li><span class="step-n">1</span><span>Start with the <strong>six recommendations</strong>, as plain text.</span></li>
+                <li><span class="step-n">2</span><span>Split each one into individual sentences &mdash; about 32 in all.</span></li>
+                <li><span class="step-n">3</span><span>Turn each sentence into a <strong>TF-IDF</strong> vector with <strong>scikit-learn</strong> &mdash; a standard way to turn text into numbers that up-weights the words that make a sentence distinctive.</span></li>
+                <li><span class="step-n">4</span><span>Factor those vectors with <strong>NMF</strong> (non-negative matrix factorization), a topic-modeling method, so sentences about the same idea cluster into a theme.</span></li>
+                <li><span class="step-n">5</span><span>Name each theme from the words the model weighted most; its quotes are the sentences that landed in it. These become the green tags above.</span></li>
+              </ol>
+              <p class="method-note">Six testimonials is a small corpus, so the model surfaces the themes and I curate the labels &mdash; the goal is to show the reasoning, not to over-automate it.</p>
+            </div>
+          </details>
+        </p>
+        <div class="cloud">
+      <span class="skill" tabindex="0" role="button" aria-label="User advocacy">User advocacy
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · user · advocating · user value · cares deeply</span>
+          <span class="sp-item"><a class="sp-jump" href="#q0">“Rodrigo cares deeply about users, and this is resonant throughout all of his work.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/isabel-zimmerman/" target="_blank" rel="noopener noreferrer">Isabel Zimmerman</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q1">“he reliably brought the conversation back to what would actually serve the people on the other end”</a><span class="sp-by"><a href="https://www.linkedin.com/in/juliasilge/" target="_blank" rel="noopener noreferrer">Julia Silge, PhD</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q2">“He was a strong advocate for our users and always went above and beyond to understand the problems we were trying to solve”</a><span class="sp-by"><a href="https://www.linkedin.com/in/heytong/" target="_blank" rel="noopener noreferrer">Cindy Tong</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q3">“Because his thinking is inherently rooted in user value, he acts as a seamless link between engineering and the rest of the business.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/rohrn/" target="_blank" rel="noopener noreferrer">Nick Rohrbaugh</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Product quality &amp; detail">Product quality &amp; detail
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · product quality · attention to detail · functionality</span>
+          <span class="sp-item"><a class="sp-jump" href="#q4">“I was consistently impressed by his high bar for product quality.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/heytong/" target="_blank" rel="noopener noreferrer">Cindy Tong</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q5">“His attention to detail is outstanding, and his ability to deeply understand product functionality is unlike anything I’ve seen in my career.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/chris-mead-b72638111/" target="_blank" rel="noopener noreferrer">Chris Mead</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q6">“His attention to detail, curiosity and collaboration elevated our work and team.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/heytong/" target="_blank" rel="noopener noreferrer">Cindy Tong</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Finding critical issues">Finding critical issues
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · critical issues · edge cases · uncovering problems</span>
+          <span class="sp-item"><a class="sp-jump" href="#q7">“he has an extraordinary talent for uncovering critical issues before they reach customers”</a><span class="sp-by"><a href="https://www.linkedin.com/in/chris-mead-b72638111/" target="_blank" rel="noopener noreferrer">Chris Mead</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q8">“Time and again, I’ve watched him identify problems faster than even the most experienced developers could resolve them.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/chris-mead-b72638111/" target="_blank" rel="noopener noreferrer">Chris Mead</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q9">“He has an exceptional eye for finding the paths users might take when interacting with features, often catching edge cases and friction points that are easily missed.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/isabel-zimmerman/" target="_blank" rel="noopener noreferrer">Isabel Zimmerman</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Strategic &amp; analytical thinking">Strategic &amp; analytical thinking
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · strategic · analytically sharp · evidence-based insights</span>
+          <span class="sp-item"><a class="sp-jump" href="#q10">“He brings a level of strategic clarity that is invaluable to any product or development team.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/rohrn/" target="_blank" rel="noopener noreferrer">Nick Rohrbaugh</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q11">“he is one of the most analytically sharp and customer-focused quality engineers I’ve encountered”</a><span class="sp-by"><a href="https://www.linkedin.com/in/jason-lang-759283b/" target="_blank" rel="noopener noreferrer">Jason Lang</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q12">“He consistently went above and beyond to research competitive tools and came back with solid, evidence-based insights that shaped our product decisions in meaningful ways.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/jason-lang-759283b/" target="_blank" rel="noopener noreferrer">Jason Lang</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Communication">Communication
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · communicator · storytelling · explains decisions</span>
+          <span class="sp-item"><a class="sp-jump" href="#q13">“Rodrigo is an exceptional communicator — clear and persuasive in writing, confident and engaging in conversation.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/jason-lang-759283b/" target="_blank" rel="noopener noreferrer">Jason Lang</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q14">“His energy, humor, and legendary storytelling made every team interaction better.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/jason-lang-759283b/" target="_blank" rel="noopener noreferrer">Jason Lang</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q15">“He’s able to thoroughly explain all his decisions.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/isabel-zimmerman/" target="_blank" rel="noopener noreferrer">Isabel Zimmerman</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Product thinking">Product thinking
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · product-minded · the “why” · anchors work</span>
+          <span class="sp-item"><a class="sp-jump" href="#q16">“he is one of the most product-minded QA Engineers I’ve ever collaborated with”</a><span class="sp-by"><a href="https://www.linkedin.com/in/rohrn/" target="_blank" rel="noopener noreferrer">Nick Rohrbaugh</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q17">“he doesn’t just think about how to build something — he digs deep into why it needs to be built”</a><span class="sp-by"><a href="https://www.linkedin.com/in/jason-lang-759283b/" target="_blank" rel="noopener noreferrer">Jason Lang</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Technical rigor">Technical rigor
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · technical rigor · genuine empathy · balance</span>
+          <span class="sp-item"><a class="sp-jump" href="#q18">“Rodrigo brings a rare balance of technical rigor and genuine customer empathy.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/jason-lang-759283b/" target="_blank" rel="noopener noreferrer">Jason Lang</a></span></span>
+          <span class="sp-item"><a class="sp-jump" href="#q19">“He approaches every challenge with curiosity, rigor, and a genuine commitment to helping products grow, improve, and succeed.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/chris-mead-b72638111/" target="_blank" rel="noopener noreferrer">Chris Mead</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Python data science">Python data science
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · python data science · right library · landscape</span>
+          <span class="sp-item"><a class="sp-jump" href="#q20">“how well he understands the Python data science landscape; he has a great sense for the right library or approach for the job”</a><span class="sp-by"><a href="https://www.linkedin.com/in/juliasilge/" target="_blank" rel="noopener noreferrer">Julia Silge, PhD</a></span></span>
+        </span>
+      </span>
+      <span class="skill" tabindex="0" role="button" aria-label="Community">Community
+        <span class="skill-pop" role="tooltip">
+          <span class="sp-kw">model keywords · community · plugged-in · Python calls</span>
+          <span class="sp-item"><a class="sp-jump" href="#q21">“I am constantly impressed with how plugged-in to the community he is.”</a><span class="sp-by"><a href="https://www.linkedin.com/in/isabel-zimmerman/" target="_blank" rel="noopener noreferrer">Isabel Zimmerman</a></span></span>
+        </span>
+      </span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="refs-h" style="padding-top:0.5rem">
+      <div class="container">
+        <h2 id="refs-h" class="visually-hidden">Recommendations</h2>
+        <div class="refs-grid">
+        <article class="ref">
+          <div class="ref-quote">
+            <p>I worked closely with Rodrigo on the Positron Notebooks team, and <span id="q16" class="hl">he is one of the most product-minded QA Engineers I’ve ever collaborated with</span>. While many engineers focus exclusively on the technical “how,” Rodrigo naturally anchors his work in the “why.” He has a rare ability to bridge the gap between complex software features and the everyday language in which people describe their problems. <span id="q3" class="hl">Because his thinking is inherently rooted in user value, he acts as a seamless link between engineering and the rest of the business.</span> <span id="q10" class="hl">He brings a level of strategic clarity that is invaluable to any product or development team.</span></p>
+          </div>
+          <div class="ref-by">
+            <div class="ref-name"><a href="https://www.linkedin.com/in/rohrn/" target="_blank" rel="noopener noreferrer">Nick Rohrbaugh</a> <span class="ext" aria-hidden="true">↗</span></div>
+            <div class="ref-title">Sr. Product Marketing Manager, Posit PBC</div>
+            <div class="ref-tags"><span class="ref-pill">Product Marketing</span><span class="ref-date">Jul 2026</span></div>
+          </div>
+        </article>
+        <article class="ref">
+          <div class="ref-quote">
+            <p>I had the pleasure of working alongside Rodrigo, and I can say without hesitation that <span id="q11" class="hl">he is one of the most analytically sharp and customer-focused quality engineers I’ve encountered</span>.</p>
+            <p>What sets Rodrigo apart is that <span id="q17" class="hl">he doesn’t just think about how to build something — he digs deep into why it needs to be built</span>. <span id="q12" class="hl">He consistently went above and beyond to research competitive tools and came back with solid, evidence-based insights that shaped our product decisions in meaningful ways.</span> That kind of strategic thinking is treasured in a QE role, and it made our team stronger.</p>
+            <p><span id="q18" class="hl">Rodrigo brings a rare balance of technical rigor and genuine customer empathy.</span> He always kept product functionality grounded in real user needs, which kept us honest and kept our work meaningful.</p>
+            <p>Beyond his professional contributions, <span id="q13" class="hl">Rodrigo is an exceptional communicator — clear and persuasive in writing, confident and engaging in conversation.</span> He has a natural ability to bring people along on his thinking, whether in a doc, a meeting, or a hallway chat. And I’d be remiss not to mention: he’s simply a joy to work with. <span id="q14" class="hl">His energy, humor, and legendary storytelling made every team interaction better.</span></p>
+            <p>I am happy to connect with anyone to recommend Rodrigo!</p>
+          </div>
+          <div class="ref-by">
+            <div class="ref-name"><a href="https://www.linkedin.com/in/jason-lang-759283b/" target="_blank" rel="noopener noreferrer">Jason Lang</a> <span class="ext" aria-hidden="true">↗</span></div>
+            <div class="ref-title">Sr. Manager of Quality Engineering, Posit PBC</div>
+            <div class="ref-tags"><span class="ref-pill">Engineering Manager</span><span class="ref-date">Jun 2026</span></div>
+          </div>
+        </article>
+        <article class="ref">
+          <div class="ref-quote">
+            <p><span id="q0" class="hl">Rodrigo cares deeply about users, and this is resonant throughout all of his work.</span> <span id="q21" class="hl">I am constantly impressed with how plugged-in to the community he is.</span> He cares about the little things, like joining Python community calls, as well as big ones, like sitting down with a new Positron user at a conference to hack on a potential new integration.</p>
+            <p><span id="q9" class="hl">He has an exceptional eye for finding the paths users might take when interacting with features, often catching edge cases and friction points that are easily missed.</span> <span id="q15" class="hl">He’s able to thoroughly explain all his decisions.</span> He learns quickly, solicits feedback regularly, asks great questions, and makes sure to integrate and document all he hears. It has been a delight working with him!</p>
+          </div>
+          <div class="ref-by">
+            <div class="ref-name"><a href="https://www.linkedin.com/in/isabel-zimmerman/" target="_blank" rel="noopener noreferrer">Isabel Zimmerman</a> <span class="ext" aria-hidden="true">↗</span></div>
+            <div class="ref-title">Senior Software Engineer, Posit PBC</div>
+            <div class="ref-tags"><span class="ref-pill">Engineering</span><span class="ref-date">Jun 2026</span></div>
+          </div>
+        </article>
+        <article class="ref">
+          <div class="ref-quote">
+            <p>One of Rodrigo’s standout strengths is <span id="q20" class="hl">how well he understands the Python data science landscape; he has a great sense for the right library or approach for the job</span> and stays on top of how the space is evolving. Paired with that is his instinct for advocating for the user. When our team worked on a new frontend for Jupyter notebooks, <span id="q1" class="hl">he reliably brought the conversation back to what would actually serve the people on the other end</span>. Any team would benefit from both his perspective and his judgment.</p>
+          </div>
+          <div class="ref-by">
+            <div class="ref-name"><a href="https://www.linkedin.com/in/juliasilge/" target="_blank" rel="noopener noreferrer">Julia Silge, PhD</a> <span class="ext" aria-hidden="true">↗</span></div>
+            <div class="ref-title">Data Science Leader, Engineering Manager, Posit PBC</div>
+            <div class="ref-tags"><span class="ref-pill">Engineering Manager</span><span class="ref-date">Jun 2026</span></div>
+          </div>
+        </article>
+        <article class="ref">
+          <div class="ref-quote">
+            <p>I had the pleasure of working with Rodrigo at Posit, where he worked as a QA engineer on Positron. <span id="q4" class="hl">I was consistently impressed by his high bar for product quality.</span> <span id="q2" class="hl">He was a strong advocate for our users and always went above and beyond to understand the problems we were trying to solve</span>, whether that meant taking courses to learn new technologies, prototyping new QA tooling, or even contributing engineering changes to improve features himself. <span id="q6" class="hl">His attention to detail, curiosity and collaboration elevated our work and team.</span></p>
+          </div>
+          <div class="ref-by">
+            <div class="ref-name"><a href="https://www.linkedin.com/in/heytong/" target="_blank" rel="noopener noreferrer">Cindy Tong</a> <span class="ext" aria-hidden="true">↗</span></div>
+            <div class="ref-title">Product Manager, Posit PBC</div>
+            <div class="ref-tags"><span class="ref-pill">Product</span><span class="ref-date">Jun 2026</span></div>
+          </div>
+        </article>
+        <article class="ref">
+          <div class="ref-quote">
+            <p>Rodrigo is an exceptionally talented and versatile engineer who would be a tremendous asset to any organization. <span id="q5" class="hl">His attention to detail is outstanding, and his ability to deeply understand product functionality is unlike anything I’ve seen in my career.</span> <span id="q19" class="hl">He approaches every challenge with curiosity, rigor, and a genuine commitment to helping products grow, improve, and succeed.</span></p>
+            <p>Rodrigo consistently embraces new challenges and tackles them with confidence, professionalism, and excellence. Beyond his technical strengths, he is a genuinely kind and personable colleague whose positive attitude helps create an environment where people feel comfortable and supported.</p>
+            <p>If you’re considering hiring Rodrigo as an SDET, be prepared: <span id="q7" class="hl">he has an extraordinary talent for uncovering critical issues before they reach customers</span>. <span id="q8" class="hl">Time and again, I’ve watched him identify problems faster than even the most experienced developers could resolve them.</span> Any team would be fortunate to have Rodrigo’s technical expertise, dedication, and character.</p>
+          </div>
+          <div class="ref-by">
+            <div class="ref-name"><a href="https://www.linkedin.com/in/chris-mead-b72638111/" target="_blank" rel="noopener noreferrer">Chris Mead</a> <span class="ext" aria-hidden="true">↗</span></div>
+            <div class="ref-title">Manager of QA Engineering, Posit PBC</div>
+            <div class="ref-tags"><span class="ref-pill">Engineering Manager</span><span class="ref-date">Jun 2026</span></div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="echo"><span class="prompt-sign">$</span> echo <span class="str">"Grateful for the people I get to build with."</span></p>
+      <p>© 2026 Rodrigo Silva Ferreira · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · handcrafted HTML &amp; CSS, no framework</p>
+      <div class="foot-links">
+        <a href="https://github.com/rodrigosf672">github</a>
+        <a href="https://www.linkedin.com/in/rsf309/">linkedin</a>
+        <a href="https://www.youtube.com/@rodrigosf672">youtube</a>
+        <a href="https://scholar.google.com/citations?user=FoA5dgMAAAAJ">scholar</a>
+        <a href="mailto:rodrigosf672@gmail.com">email</a>
+        <a href="/rss.xml">rss</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var current = null;
+      function clearHl() { if (current) { current.classList.remove('on'); current = null; } }
+
+      // JS-managed hover with a small close delay: the popover opens only from the
+      // chip itself (no invisible bridge), and the delay lets the pointer cross the
+      // small gap into the popover without flicker.
+      document.querySelectorAll('.skill').forEach(function (s) {
+        var t;
+        function open() { clearTimeout(t); s.classList.add('pop-open'); }
+        function close() { t = setTimeout(function () { s.classList.remove('pop-open'); }, 140); }
+        s.addEventListener('mouseenter', open);
+        s.addEventListener('mouseleave', close);
+        s.addEventListener('focusin', open);
+        s.addEventListener('focusout', close);
+      });
+
+      // click a quote: highlight it in the testimonial, scroll to it, close the popover
+      document.querySelectorAll('.sp-jump').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var el = document.getElementById(a.getAttribute('href').slice(1));
+          if (!el) return;
+          clearHl();
+          el.classList.add('on');
+          current = el;
+          var skill = a.closest('.skill');
+          if (skill) skill.classList.remove('pop-open');
+          if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      });
+
+      // any other click (the highlight itself or elsewhere) clears the highlight
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('.sp-jump')) return;
+        clearHl();
+      });
+    })();
+  </script>
+  <script src="/main.js?v=8"></script>
+</body>
+</html>
