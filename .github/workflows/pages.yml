@@ -74,10 +74,8 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
-  # Post-deploy verification against the real deployment. Requires the
-  # Cloudflare bot-protection exception for CI (relaxed July 2026); if this
-  # ever starts failing with 403s again, that exception is the first suspect —
-  # the content itself is already gated by site-tests.
+  # Post-deploy verification against the real deployment; the content itself
+  # is already gated by site-tests before anything ships.
   smoke-test:
     runs-on: ubuntu-latest
     needs: deploy

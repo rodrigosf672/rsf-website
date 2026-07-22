@@ -48,11 +48,8 @@ references suite (`npm run test:references`) against a locally served copy of
 `site/` before anything deploys, so a broken page can never ship.
 
 After deploy, a `smoke-test` job re-runs the site-critical suite against the
-live site. This depends on a Cloudflare bot-protection exception for CI
-(rodrigosf.com is Cloudflare-proxied, and Bot Fight Mode used to 403 headless
-browsers on GitHub runners). If smoke-test starts failing with 403s, check
-that exception first — the deployed content is already validated by
-`site-tests`. To run the suite against the live site from your own machine:
+live site; the deployed content is already validated by `site-tests`. To run
+the suite against the live site from your own machine:
 ```bash
 npx playwright test tests/site-critical.spec.ts   # BASE_URL defaults to https://rodrigosf.com
 ```

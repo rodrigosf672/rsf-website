@@ -1,9 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
 // Runs tests/site-critical.spec.ts against a locally served copy of site/, so
-// CI validates the exact content being deployed. Testing through the live
-// domain is unreliable from CI: Cloudflare's bot protection 403s headless
-// browsers on GitHub runners. `npm run test:critical`.
+// CI validates the exact content being deployed before anything ships.
+// `npm run test:critical`.
 export default defineConfig({
     testDir: './tests',
     testMatch: 'site-critical.spec.ts',

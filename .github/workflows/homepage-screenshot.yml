@@ -1,9 +1,9 @@
 name: Monthly homepage screenshot
 
 # Regenerates docs/homepage.png (the README banner) from a locally served
-# site/ once a month (the live domain's Cloudflare bot protection 403s
-# headless browsers on GitHub runners). Commits made with GITHUB_TOKEN don't
-# retrigger workflows, so this never kicks off a Pages deploy or loops.
+# site/ once a month, so captures are deterministic. Commits made with
+# GITHUB_TOKEN don't retrigger workflows, so this never kicks off a Pages
+# deploy or loops.
 on:
   schedule:
     - cron: "0 6 1 * *" # 06:00 UTC on the 1st of each month
