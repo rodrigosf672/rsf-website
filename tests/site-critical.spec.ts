@@ -23,7 +23,8 @@ test.describe('Site Critical Integrity', () => {
         const navLinks = [
             { name: 'talks', hrefPattern: /\/talks\.html/ },
             { name: 'publications', hrefPattern: /\/publications\.html/ },
-            { name: 'projects', hrefPattern: /\/projects\.html/ }
+            { name: 'projects', hrefPattern: /\/projects\.html/ },
+            { name: 'references', hrefPattern: /\/references\.html/ }
         ];
 
         for (const link of navLinks) {
