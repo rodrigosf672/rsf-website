@@ -28,6 +28,12 @@ jobs:
         run: npm run test:worker
       - name: Index & site-integrity tests
         run: npm run test:scripts
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps --no-shell chromium
+      - name: References page interactive tests
+        run: npm run test:references
+        env:
+          CI: true
       - name: Full index build parses without error
         run: node scripts/build-index.mjs --dry-run
         env:
