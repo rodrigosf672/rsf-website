@@ -42,5 +42,14 @@ The primary test suite is located in `tests/site-critical.spec.ts`. It verifies:
 
 ## Continuous Integration
 
-Tests run automatically on GitHub Actions via the workflow defined in `smoke-test-job.yml`.
-This workflow executes on deployment updates and ensures the live site (`BASE_URL`) remains healthy.
+Tests run automatically on GitHub Actions via `.github/workflows/pages.yml`. The
+`site-tests` job runs the site-critical suite (`npm run test:critical`) and the
+references suite (`npm run test:references`) against a locally served copy of
+`site/` before anything deploys, so a broken page can never ship.
+
+CI does not test through the live domain: rodrigosf.com is behind Cloudflare,
+and its bot protection returns 403 to headless browsers on GitHub runners. To
+run the suite against the live site manually from your own machine:
+```bash
+npx playwright test tests/site-critical.spec.ts   # BASE_URL defaults to https://rodrigosf.com
+```

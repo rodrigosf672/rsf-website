@@ -1,8 +1,9 @@
 name: Monthly homepage screenshot
 
-# Regenerates docs/homepage.png (the README banner) from the live site once a
-# month. Commits made with GITHUB_TOKEN don't retrigger workflows, so this never
-# kicks off a Pages deploy or loops.
+# Regenerates docs/homepage.png (the README banner) from a locally served
+# site/ once a month (the live domain's Cloudflare bot protection 403s
+# headless browsers on GitHub runners). Commits made with GITHUB_TOKEN don't
+# retrigger workflows, so this never kicks off a Pages deploy or loops.
 on:
   schedule:
     - cron: "0 6 1 * *" # 06:00 UTC on the 1st of each month
@@ -26,9 +27,12 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps --no-shell chromium
       - name: Capture homepage
-        run: node scripts/screenshot-home.mjs
+        run: |
+          npm run serve &
+          for i in $(seq 1 30); do curl -sf http://localhost:4321/ >/dev/null && break; sleep 1; done
+          node scripts/screenshot-home.mjs
         env:
-          BASE_URL: https://rodrigosf.com
+          BASE_URL: http://localhost:4321
       - name: Commit if the screenshot changed
         run: |
           if git diff --quiet -- docs/homepage.png; then
