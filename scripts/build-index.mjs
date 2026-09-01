@@ -147,6 +147,7 @@ function indexBlog() {
     (f) => f.endsWith(".html") && f !== "index.html",
   );
   const titles = [];
+  let notebookCount = 0;
   for (const f of files) {
     const html = read(`site/blog/${f}`);
     if (!html.includes('class="post-body"')) continue;
@@ -169,12 +170,20 @@ function indexBlog() {
       }
     }
     const nb = html.match(/<section class="notebook-embed"[\s\S]*?<p class="prose"[^>]*>([\s\S]*?)<\/p>[\s\S]*?<iframe src="([^"]+)"/);
-    if (nb) add("blog", `Blog: ${title} — interactive notebook`, `${SITE}${nb[2]}`,
-      `The post "${title}" embeds an interactive marimo notebook. ${strip(nb[1])}`);
+    if (nb) {
+      notebookCount++;
+      add("blog", `Blog: ${title} — interactive notebook`, `${SITE}${nb[2]}`,
+        `The post "${title}" embeds an interactive marimo notebook. ${strip(nb[1])}`);
+    }
   }
   if (titles.length) {
+    const nbNote = notebookCount === 0
+      ? "None of these posts currently embed an interactive notebook."
+      : notebookCount === titles.length
+      ? "Posts ship with interactive marimo notebooks that run entirely in the browser."
+      : `${notebookCount} of these ${titles.length} posts embed an interactive marimo notebook that runs entirely in the browser; the rest are plain essays.`;
     add("blog", "Blog overview — all posts on Rodrigo's blog", `${SITE}/blog/`,
-      `Posts published on Rodrigo's blog, most recent first: ${titles.join("; ")}. Posts ship with interactive marimo notebooks that run entirely in the browser.`);
+      `Posts published on Rodrigo's blog, most recent first: ${titles.join("; ")}. ${nbNote}`);
   }
 }
 

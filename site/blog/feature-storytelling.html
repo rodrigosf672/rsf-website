@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Feature Can Be True and Still Tell You Nothing — Rodrigo Silva Ferreira</title>
+  <meta name="description" content="What Arabic flashcards taught me about feature-telling in technical products: why a spec sheet is a mechanism, a story is a consequence, and most of positioning is listening.">
+  <link rel="canonical" href="https://rodrigosf.com/blog/feature-storytelling.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A Feature Can Be True and Still Tell You Nothing">
+  <meta property="og:description" content="What Arabic flashcards taught me about feature-telling in technical products, and why a spec sheet is a mechanism while a story is a consequence.">
+  <meta property="og:url" content="https://rodrigosf.com/blog/feature-storytelling.html">
+  <meta property="og:image" content="https://rodrigosf.com/assets/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rodrigosf.com/assets/og-preview.png">
+  <link rel="icon" href="/favicon.ico?v=3">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="alternate" type="application/rss+xml" title="Rodrigo Silva Ferreira Blog" href="/rss.xml">
+  <link rel="stylesheet" href="/styles.css?v=9">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="brand" href="/"><span class="prompt-sign">rodrigo@rsf</span>:~$<span class="cursor" aria-hidden="true"></span></a>
+      <div class="nav-links">
+        <a href="/talks.html">talks</a>
+        <a href="/projects.html">projects</a>
+        <a href="/publications.html">publications</a>
+        <a href="/references.html">references</a>
+        <a href="/blog/" aria-current="page">blog</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">--light</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="section post">
+      <div class="container">
+        <span class="kicker">blog</span>
+        <h1>A Feature Can Be True and Still Tell You Nothing</h1>
+        <p class="post-meta">September 1, 2026 · 3 min read · essay · on feature-telling, storytelling, and technical positioning</p>
+        <blockquote class="epigraph">A feature answers what the product can do. A story answers why anyone should care.</blockquote>
+        <div class="post-body">
+        <p>One of my favorite memories at NYU Abu Dhabi is studying for Arabic vocabulary quizzes. Between problem sets I’d run through my flashcards, and it was satisfying because the progress was measurable: 50 words, then 100, then 500. Then I’d have an actual conversation with a native speaker and realize that knowing the words wasn’t the same as knowing what to say. The same phrase changed meaning depending on who said it, who heard it, and how well they knew each other. The vocabulary was information. The story was context.</p>
+        <figure>
+          <img src="arabic-flashcards-ai.jpg" alt="Arabic vocabulary flashcards scattered across a wooden table, each card showing an Arabic word, its transliteration, and an English translation." width="1408" height="768" loading="lazy">
+          <figcaption>AI-generated (Gemini).</figcaption>
+        </figure>
+        <p>Technical companies often make the same mistake. They get very good at feature-telling: the product does this, it integrates with that, here are the benchmarks, here are the differentiators. All of it can be true, and none of it tells a story. A feature answers what the product can do. A story answers why anyone should care.</p>
+        <h2>The mechanism and the consequence</h2>
+        <p>Take a phone. The spec sheet says 4,500 milliamp hours. That’s accurate, verifiable, and semantically inert, because a number is a mechanism and not a consequence. What it actually means is that you stop checking the battery before you leave the house. Same phone, same number, except now it belongs to somebody’s day. The product isn’t the protagonist. The customer’s problem is.</p>
+        <figure>
+          <img src="phones-charging.jpg" alt="Three smartphones lying face down side by side on a wooden table, each plugged into a different charging cable." width="1600" height="1067" loading="lazy">
+          <figcaption>Photo by Stanley Ng on <a href="https://www.pexels.com/photo/4387770/">Pexels</a>.</figcaption>
+        </figure>
+        <p>It isn’t one story either. Those 4,500 milliamp hours are a full day of navigation to someone in an unfamiliar city, a shift you don’t have to plan around finding an outlet, and one less thing that can go wrong for anyone waiting on a call that matters. The spec didn’t change. The narrative did. Deciding which version to tell, and to whom, is most of the work.</p>
+        <p>So why do companies lead with the mechanism? Not for lack of imagination. In technical work, precision is how you earn standing, and my own training in the natural sciences taught me to value it above almost everything else. People optimize for what earns them standing, and meaning gets filed as someone else’s job.</p>
+        <h2>Order, not opposition</h2>
+        <p>Saint-Exupéry, who flew mail planes before he wrote, left a line usually translated as:</p>
+        <blockquote>“If you want to build a ship, do not drum up the men to gather wood, divide the work, and give orders. Instead, teach them to yearn for the vast and endless sea.”</blockquote>
+        <p>He knew what a badly maintained aircraft does, so this isn’t an argument against rigor. It’s an argument about order. The wood still has to be sound, but nobody gathers it for its own sake.</p>
+        <h2>Where the sea comes from</h2>
+        <p>Which leaves the harder question of where the sea comes from, and it isn’t a desk. It comes from beta programs, where you find out which step people skip. From interviews, where someone walks you through a workaround they’ve stopped noticing they do. From the issue tracker, and from the hallway at a conference. Most of positioning is listening.</p>
+        <figure>
+          <img src="sailboat-sunset.jpg" alt="Silhouette of a two-masted sailboat on calm water at sunset, the sun low on the horizon." width="1600" height="1067" loading="lazy">
+          <figcaption>Photo by Katherine McCormack on <a href="https://unsplash.com/photos/black-and-white-sailboat-in-body-of-water-during-sunset-j1egA73qp7c">Unsplash</a>.</figcaption>
+        </figure>
+        <p>Storytelling isn’t about removing the details. It’s about giving the details somewhere to go. Feature-telling tells people what you built. Storytelling gives them a reason to care that you built it.</p>
+        </div>
+
+        <p class="post-back"><a href="/blog/">← All posts</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="echo"><span class="prompt-sign">$</span> echo <span class="str">"Teach them to yearn for the sea."</span></p>
+      <p>© 2026 Rodrigo Silva Ferreira · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · handcrafted HTML &amp; CSS, no framework</p>
+      <div class="foot-links">
+        <a href="https://github.com/rodrigosf672">github</a>
+        <a href="https://www.linkedin.com/in/rsf309/">linkedin</a>
+        <a href="https://www.youtube.com/@rodrigosf672">youtube</a>
+        <a href="https://scholar.google.com/citations?user=FoA5dgMAAAAJ">scholar</a>
+        <a href="mailto:rodrigosf672@gmail.com">email</a>
+        <a href="/rss.xml">rss</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/main.js?v=8"></script>
+</body>
+</html>
