@@ -90,8 +90,10 @@ test.describe('Site Critical Integrity', () => {
             expect(r?.status(), `${href} should resolve`).toBe(200);
             await expect(page.locator('h1')).not.toBeEmpty();
             await expect(page.locator('.post-body')).toBeVisible();
-            // each post embeds exactly one interactive marimo notebook
-            await expect(page.locator('.nb-frame iframe')).toHaveCount(1);
+            // posts may embed an interactive marimo notebook, but it isn't required —
+            // some are plain essays. If a notebook frame is present there must be exactly one.
+            const nbCount = await page.locator('.nb-frame iframe').count();
+            expect(nbCount, `${href} should have 0 or 1 notebook frames`).toBeLessThanOrEqual(1);
             await page.goto('/blog/');
         }
     });
