@@ -16,10 +16,10 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const html = readFileSync(join(ROOT, "site/references.html"), "utf8");
 const all = (re) => [...html.matchAll(re)];
 
-test("nine themes, each with a keyword line and a popover", () => {
-  assert.equal(all(/<span class="skill"[^>]*role="button"/g).length, 9);
-  assert.equal(all(/class="skill-pop"/g).length, 9);
-  assert.equal(all(/class="sp-kw"/g).length, 9, "each theme shows its model keywords");
+test("ten themes, each with a keyword line and a popover", () => {
+  assert.equal(all(/<span class="skill"[^>]*role="button"/g).length, 10);
+  assert.equal(all(/class="skill-pop"/g).length, 10);
+  assert.equal(all(/class="sp-kw"/g).length, 10, "each theme shows its model keywords");
 });
 
 test("word cloud is uniform — no size/rank cues", () => {
@@ -28,12 +28,17 @@ test("word cloud is uniform — no size/rank cues", () => {
   assert.doesNotMatch(html, /<span class="count"/, "no count badges (would imply ranking)");
 });
 
-test("every quote jump link resolves to a real highlight target (1:1)", () => {
+test("every quote jump link resolves to a real highlight target", () => {
+  // a jump always resolves to exactly one <span id> — but a single quote can be
+  // surfaced under more than one theme (e.g. a storytelling quote also filed under
+  // communication), so this is many-jumps-to-one-span, not strict 1:1.
   const jumps = all(/<a class="sp-jump" href="#(q\d+)"/g).map((m) => m[1]);
-  const ids = new Set(all(/<span id="(q\d+)" class="hl"/g).map((m) => m[1]));
+  const idList = all(/<span id="(q\d+)" class="hl"/g).map((m) => m[1]);
+  const ids = new Set(idList);
+  assert.equal(idList.length, ids.size, "each highlight id must appear exactly once in the testimonials");
   assert.ok(jumps.length >= 20, "expected the full set of clickable quotes");
   for (const j of jumps) assert.ok(ids.has(j), `jump #${j} has no matching highlight span`);
-  assert.equal(ids.size, jumps.length, "jump links and highlight targets must be 1:1");
+  for (const id of ids) assert.ok(jumps.includes(id), `highlight #${id} is never linked from a theme popover`);
 });
 
 test("all author / LinkedIn links open in a new tab", () => {
@@ -41,17 +46,17 @@ test("all author / LinkedIn links open in a new tab", () => {
   const links = all(/<a href="https:\/\/www\.linkedin\.com\/in\/[^"]+"[^>]*>/g)
     .map((m) => m[0])
     .filter((l) => !l.includes("/in/rsf309"));
-  assert.ok(links.length >= 6, "expected the six reviewers plus their popover mentions");
+  assert.ok(links.length >= 8, "expected the eight reviewers plus their popover mentions");
   for (const l of links) {
     assert.match(l, /target="_blank"/, `missing target=_blank: ${l}`);
     assert.match(l, /rel="[^"]*noopener/, `missing rel=noopener: ${l}`);
   }
 });
 
-test("six testimonials, each tagged with a cross-functional role", () => {
-  assert.equal(all(/<article class="ref">/g).length, 6);
-  assert.equal(all(/class="ref-pill">/g).length, 6);
-  for (const fn of ["Product Marketing", "Engineering Manager", ">Engineering<", "Product<"]) {
+test("eight testimonials, each tagged with a cross-functional role", () => {
+  assert.equal(all(/<article class="ref">/g).length, 8);
+  assert.equal(all(/class="ref-pill">/g).length, 8);
+  for (const fn of ["Product Marketing", "Engineering Manager", ">Engineering<", "Product<", "Data Science<"]) {
     assert.ok(html.includes(`ref-pill">${fn.replace(/[<>]/g, "")}`) || html.includes(fn),
       `missing function pill: ${fn}`);
   }
