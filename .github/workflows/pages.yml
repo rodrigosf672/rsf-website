@@ -14,7 +14,7 @@ permissions:
 jobs:
   # Gate: unit + integrity tests must pass before anything deploys.
   checks:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -32,7 +32,7 @@ jobs:
   # Gate: Playwright suites run against a locally served site/ (the exact
   # content being deployed), so broken content can never ship.
   site-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -51,7 +51,7 @@ jobs:
 
   build:
     needs: [checks, site-tests]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -63,7 +63,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -77,7 +77,7 @@ jobs:
   # Post-deploy verification against the real deployment; the content itself
   # is already gated by site-tests before anything ships.
   smoke-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: deploy
     steps:
       - uses: actions/checkout@v7
