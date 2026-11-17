@@ -1,0 +1,56 @@
+[
+  {
+    "author": "Sharon Wang",
+    "title": "Engineering Manager, Posit PBC",
+    "date": "Sep 2026",
+    "text": "Rodrigo takes a user-centred approach to product development and software quality. His approach is informed by his involvement as a Python community member and conference speaker, and is elevated by his dedication to sweating the details when it comes to user experience.\n\nI’ve seen the positive impact of his thoughtfulness on our product direction and quality throughout his work on the Positron team, especially for new feature development such as the Notebook Editor and the AI Assistant experience. He’s an enthusiastic collaborator who’s excited to work cross-functionally with folks across engineering, product, marketing, and beyond.\n\nSomething I appreciate about Rodrigo is that he’s someone who isn’t satisfied with just getting the job done, he’s someone who advocates for addressing the papercuts that can make or break product experience."
+  },
+  {
+    "author": "Carlos A Aranibar",
+    "title": "Data Scientist, Northwestern Medicine",
+    "date": "Aug 2026",
+    "text": "I met Rodrigo at PyOhio in 2023 and we’ve stayed in touch ever since. He’s kept me in the loop on his projects and talks along the way, I’ve been in the audience for a couple of them, and I got to introduce him as host at PyCon US 2025.\n\nRodrigo is a great technical storyteller. A lot of speakers explain what they built. He builds a story around it, and that’s what keeps a room with him. At PyOhio 2024 he gave “Signal Processing in Electrochemistry with Python: Applications to the US Opioids Crisis,” which in most hands would have been a dry walk through the methods. Instead he opened with a hook, gave people a reason to care before getting anywhere near the implementation, and kept coming back to the human stakes behind the data. At PyCon US 2025 he gave “Honrando las Narrativas de Braceros,” using Python text mining to surface stories of labor, migration, and resilience, and there the storytelling was the whole point. He made the technique feel like a way of honoring the people in those records instead of just a pipeline he happened to write.\n\nHe also reads a room really well. He adjusts the level and the framing to whoever is in front of him, and every technical detail ends up tied back to a bigger why, so people stay with him start to finish.\n\nOn top of that he’s a strong developer with real range across tools and topics, and the number of talks he’s put out over the past few years says a lot about how much work he does behind the scenes.\n\nIf you want someone who can do the technical work and has the people skills to go with it, talk to Rodrigo!"
+  },
+  {
+    "author": "Jon Vanausdeln",
+    "title": "Sr. QA Engineer, Posit PBC",
+    "date": "Aug 2026",
+    "text": "I had the pleasure of working with Rodrigo at Posit, where we worked on the Positron team. From day one, he stood out for how quickly he absorbed new information and how thoughtful his questions were. He never pretended to understand something just to move a conversation along — if a bug report or testing approach didn’t fully make sense, he dug in until it did, and that diligence consistently improved the team’s work.\n\nWhat I appreciated most was that Rodrigo never treated QA as “find the bug and move on.” He kept the user experience front and center and had a rare ability to step back and understand how a single issue fit into the broader system. Because of that, he routinely caught downstream problems and edge cases the rest of us missed while focused on our individual tasks.\n\nHis background in Python and data science also elevated his contributions. He applied that experience thoughtfully, producing smarter, more thorough testing strategies and solutions. Rodrigo is sharp, curious, and genuinely great to work with, any team would benefit from having him."
+  },
+  {
+    "author": "Nick Rohrbaugh",
+    "title": "Sr. Product Marketing Manager, Posit PBC",
+    "date": "Jul 2026",
+    "text": "I worked closely with Rodrigo on the Positron Notebooks team, and he is one of the most product-minded QA Engineers I’ve ever collaborated with. While many engineers focus exclusively on the technical “how,” Rodrigo naturally anchors his work in the “why.” He has a rare ability to bridge the gap between complex software features and the everyday language in which people describe their problems. Because his thinking is inherently rooted in user value, he acts as a seamless link between engineering and the rest of the business. He brings a level of strategic clarity that is invaluable to any product or development team."
+  },
+  {
+    "author": "Jason Lang",
+    "title": "Sr. Manager of Quality Engineering, Posit PBC",
+    "date": "Jun 2026",
+    "text": "I had the pleasure of working alongside Rodrigo, and I can say without hesitation that he is one of the most analytically sharp and customer-focused quality engineers I’ve encountered.\n\nWhat sets Rodrigo apart is that he doesn’t just think about how to build something — he digs deep into why it needs to be built. He consistently went above and beyond to research competitive tools and came back with solid, evidence-based insights that shaped our product decisions in meaningful ways. That kind of strategic thinking is treasured in a QE role, and it made our team stronger.\n\nRodrigo brings a rare balance of technical rigor and genuine customer empathy. He always kept product functionality grounded in real user needs, which kept us honest and kept our work meaningful.\n\nBeyond his professional contributions, Rodrigo is an exceptional communicator — clear and persuasive in writing, confident and engaging in conversation. He has a natural ability to bring people along on his thinking, whether in a doc, a meeting, or a hallway chat. And I’d be remiss not to mention: he’s simply a joy to work with. His energy, humor, and legendary storytelling made every team interaction better.\n\nI am happy to connect with anyone to recommend Rodrigo!"
+  },
+  {
+    "author": "Isabel Zimmerman",
+    "title": "Senior Software Engineer, Posit PBC",
+    "date": "Jun 2026",
+    "text": "Rodrigo cares deeply about users, and this is resonant throughout all of his work. I am constantly impressed with how plugged-in to the community he is. He cares about the little things, like joining Python community calls, as well as big ones, like sitting down with a new Positron user at a conference to hack on a potential new integration.\n\nHe has an exceptional eye for finding the paths users might take when interacting with features, often catching edge cases and friction points that are easily missed. He’s able to thoroughly explain all his decisions. He learns quickly, solicits feedback regularly, asks great questions, and makes sure to integrate and document all he hears. It has been a delight working with him!"
+  },
+  {
+    "author": "Julia Silge, PhD",
+    "title": "Data Science Leader, Engineering Manager, Posit PBC",
+    "date": "Jun 2026",
+    "text": "One of Rodrigo’s standout strengths is how well he understands the Python data science landscape; he has a great sense for the right library or approach for the job and stays on top of how the space is evolving. Paired with that is his instinct for advocating for the user. When our team worked on a new frontend for Jupyter notebooks, he reliably brought the conversation back to what would actually serve the people on the other end. Any team would benefit from both his perspective and his judgment."
+  },
+  {
+    "author": "Cindy Tong",
+    "title": "Product Manager, Posit PBC",
+    "date": "Jun 2026",
+    "text": "I had the pleasure of working with Rodrigo at Posit, where he worked as a QA engineer on Positron. I was consistently impressed by his high bar for product quality. He was a strong advocate for our users and always went above and beyond to understand the problems we were trying to solve, whether that meant taking courses to learn new technologies, prototyping new QA tooling, or even contributing engineering changes to improve features himself. His attention to detail, curiosity and collaboration elevated our work and team."
+  },
+  {
+    "author": "Chris Mead",
+    "title": "Manager of QA Engineering, Posit PBC",
+    "date": "Jun 2026",
+    "text": "Rodrigo is an exceptionally talented and versatile engineer who would be a tremendous asset to any organization. His attention to detail is outstanding, and his ability to deeply understand product functionality is unlike anything I’ve seen in my career. He approaches every challenge with curiosity, rigor, and a genuine commitment to helping products grow, improve, and succeed.\n\nRodrigo consistently embraces new challenges and tackles them with confidence, professionalism, and excellence. Beyond his technical strengths, he is a genuinely kind and personable colleague whose positive attitude helps create an environment where people feel comfortable and supported.\n\nIf you’re considering hiring Rodrigo as an SDET, be prepared: he has an extraordinary talent for uncovering critical issues before they reach customers. Time and again, I’ve watched him identify problems faster than even the most experienced developers could resolve them. Any team would be fortunate to have Rodrigo’s technical expertise, dedication, and character."
+  }
+]

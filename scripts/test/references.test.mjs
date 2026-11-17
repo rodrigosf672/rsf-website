@@ -53,9 +53,9 @@ test("all author / LinkedIn links open in a new tab", () => {
   }
 });
 
-test("eight testimonials, each tagged with a cross-functional role", () => {
-  assert.equal(all(/<article class="ref">/g).length, 8);
-  assert.equal(all(/class="ref-pill">/g).length, 8);
+test("nine testimonials, each tagged with a cross-functional role", () => {
+  assert.equal(all(/<article class="ref">/g).length, 9);
+  assert.equal(all(/class="ref-pill">/g).length, 9);
   for (const fn of ["Product Marketing", "Engineering Manager", ">Engineering<", "Product<", "Data Science<"]) {
     assert.ok(html.includes(`ref-pill">${fn.replace(/[<>]/g, "")}`) || html.includes(fn),
       `missing function pill: ${fn}`);

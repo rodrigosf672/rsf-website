@@ -13,7 +13,7 @@ test.describe('References page', () => {
         await expect(page.locator('h1')).toContainText('References');
         await expect(page.locator('.nav-links a[aria-current="page"]')).toContainText('references');
         expect(await page.locator('.skill').count()).toBe(10);
-        expect(await page.locator('.ref').count()).toBe(8);
+        expect(await page.locator('.ref').count()).toBe(9);
     });
 
     test('theme chips are visually uniform — same size and colour', async ({ page }) => {
